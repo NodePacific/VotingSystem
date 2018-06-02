@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <meta name="renderer" content="webkit">
+  <title>
+    NODE.pacific
+  </title>
+
+  <link rel="stylesheet" type="text/css" href="http://unpkg.com/iview/dist/styles/iview.css">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/bootstrap-select.min.css" rel="stylesheet">
+  <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/rangeslider.css">
+  <link href="/css/welcome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/vote.min.css">
+  <style>
+    .change-select{
+      background-image: url('/images/up.png');
+    }
+    .dropdown-toggle .caret{
+      display: inline-block;
+    }
+    .dropdown-menu__icon {
+      width: 27px;
+      margin-right: 8px;
+    }
+    .import-account__name--desc .dropdown, .dropup{
+      width: 224px;
+    }
+    .import-account__name--desc .dropdown .dropdown-toggle{
+      width: 224px;
+      color: #DDB273;
+      background-color: rgba(255,255,255,.1);
+      border-radius: 0;
+      border: 1px solid rgba(255,255,255,.1);
+      text-align: left;
+      display: block;
+      line-height: 39px;
+      height: 39px;
+      padding-left: 12px;
+    }
+    .import-account__name--desc .dropdown-menu>li>a{
+      padding: 8px 20px 10px 29px;
+      font-size: 14px;
+      color: rgba(255,255,255,.65);
+    }
+    .import-account__name--desc .open>.dropdown-menu{
+      background-color: #5C5F71;
+      width: 100%;
+      max-height: 160px;
+      overflow-y: auto;
+      color: rgba(255,255,255,.65);
+    }
+    .import-account__name--desc .bootstrap-select.btn-group .dropdown-menu li.selected{
+      background-color: #1890FF;
+    }
+    .import-account__name--desc .account-active{
+      color: #fff;
+    }
+    .import-account__name--desc .caret{
+      float: right;
+      margin-top: 17px;
+      margin-right: 9px;
+      color: #fff;
+    }
+    .import-account__name--desc{
+      display: inline-block;
+    }
+    .import-account__name--desc .open>.dropdown-menu>li:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+      background-color: #1890FF;
+    }
+    .ivu-notice{
+      top: 75px!important;
+    }
+    .ivu-notice-desc{
+      color: rgba(0, 0, 0, .65);
+    }
+    .ivu-notice-with-desc.ivu-notice-with-icon .ivu-notice-desc{
+      margin-left: 31px;
+    }
+    .ivu-notice-with-desc .ivu-notice-icon{
+      font-size: 24px;
+      margin-top: 3px;
+    }
+    .ivu-notice-notice{
+      padding: 14px;
+    }
+    .page-scroll{
+      font-weight: bold;
+    }
+  </style>
+  <style>
+    .change-select{
+      background-image: url('/images/up.png');
+    }
+    .dropdown-toggle .caret{
+      display: inline-block;
+    }
+    body{
+      letter-spacing: 1px;
+    }
+    .ios-select-widget-box #iosSelectTitle{
+      line-height: 44px;
+    }
+  </style>
+  <!--[if lt IE 9]>
+    <script type="text/javascript" src="/js/html5shiv.js"></script>
+    <script type="text/javascript" src="/js/es5.shim.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+</head>
+<body>
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container header-content">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+        <i class="fa fa-bars"></i>
+        <span class="sr-only">切换导航</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand page-scroll" href="#page-top">
+        <img class="navbar-brand__icon" src="/images/eos-logo.png" />
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse"> 
+      <ul class="nav navbar-nav">
+        <li class="hidden">
+          <a href="#page-top"></a>
+        </li>
+        <li class="">
+          <a class="page-scroll home_tab" href="/">Home</a>
+        </li>
+        <li class="active">
+          <a class="page-scroll pacific_tab" href="/vote">EOS Pacific</a>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <span class="current-language"><img class="dropdown-menu__icon" src="/images/eng-icon.png"/>English</span>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-menu__li" data-language="english">
+              <a href="#english"><img class="dropdown-menu__icon" src="/images/eng-icon.png"/>English</a>
+            </li>
+            <li class="dropdown-menu__li" data-language="zh_chs">
+              <a href="#zh_chs"><img class="dropdown-menu__icon" src="/images/zh-icon.png"/>中文简体</a>
+            </li>
+            <li class="dropdown-menu__li" data-language="zh_cht">
+              <a href="#zh_cht"><img class="dropdown-menu__icon" src="/images/zh-icon.png"/>中文繁體</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="body">
+    <section class="vote" id="vote-tip">
+    <div class="vote-content">
+            <div class="import-account">
+        <p class="import-account__title">导入账户</p>
+        <p class="import-account__key">请输入你的私钥，你的私钥将仅用来签名本次投票，并不会在网上保存</p>
+        <div class="import-account__inqure">
+          <div class="input-box">
+            <span class="input-box__line"></span>
+            <input class="input-box__detail private" value="" autocomplete="off" type="text" placeholder="请输入私钥" >
+          </div>
+          <button class="import-account__inqure--btn">查询账户名</button>
+        </div>
+        <p class="import-account__name"><span class="inqure-name">初始账户名：</span><span class="import-account__name--desc">-</span></p>
+        <p class="import-account__change">如果你有修改账户名，请输入你修改后的账户名，如果未修改账户名，请直接点击导入账户</p>
+        <div class="import-account__import">
+          <div class="input-box">
+            <span class="input-box__line"></span>
+            <input class="input-box__detail change-account" value="" autocomplete="off" type="text" placeholder="请输入修改后的账户名" >
+          </div>
+          <button class="import-account__import--btn" disabled="disabled">导入账户</button>
+        </div>
+      </div> 
+
+            <div class="pledge">
+        <p class="pledge-title">质押</p>
+        <div class="pledge-content">
+          <div class="pledge-content__account">
+            <div class="pledge-content__account--asset">
+              <div class="pledge-content__account--asset--single">
+                <span class="pledge-content__account--asset--single--title account-balance">账户总额：</span>
+                <p class="pledge-content__account--asset--single--num"><span class="pledge-content__account--asset--single--num--unit balance-num">0</span></p>
+              </div>
+              <div class="pledge-content__account--asset--single">
+                <span class="pledge-content__account--asset--single--title pledge-already">已质押：</span>
+                <p class="pledge-content__account--asset--single--num"><span class="pledge-content__account--asset--single--num--unit pledge-num">0</span></p>
+              </div>
+              <div class="pledge-content__account--asset--single">
+                <span class="pledge-content__account--asset--single--title repayment">回款中：</span>
+                <p class="pledge-content__account--asset--single--num"><span class="pledge-content__account--asset--single--num--unit repayment-num">0</span></p>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="pledge-content__account--desc">
+              <p class="pledge-content__account--desc--single balance-desc">账户总额：您账户中EOS币的总数量。</p>
+              <p class="pledge-content__account--desc--single pledge-desc">已质押：您账户中已经质押的EOS币数量，即您获得的投票权数量。</p>
+              <p class="pledge-content__account--desc--single payment-desc">回款中：正在等待赎回的EOS币数量，您可通过调整质押数量进行赎回，赎回中的EOS币需要等待72小时回款。</p>
+            </div>
+          </div>
+          <div class="pledge-content__bar">
+            <div class="pledge-content__bar--content">
+              <div class="range-content">
+                <p class="range-content__intro"><span class="range-content__intro--num">0</span>EOS</p>
+                <input class="range-content__bar" type="range" min="0" data-rangeslider>
+                <p class="range-content__desc"><img class="range-content__desc--icon" src="/images/app_mobile/import-tip-icon.png"/> <span class="range-desc">调整进度条可改变质押数量</span></p>
+                <button class="pledge-btn" disabled="disabled">质押</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+      <div class="poll">
+        <p class="poll-title">投票</p>
+        <div class="poll-content">
+          <div class="pledge-change">
+            <div class="pledge-change__single self_account" style="margin-top:0;margin-left:0;display:none;width:auto;">
+              <span class="pledge-change__single--inteo" style="width:auto;">EOS Pacific（建议）</span>
+              <input class="pledge-change__single--checked" type="checkbox" name="pledge" checked="checked" accountName="EOS Pacific"/>
+            </div>
+            <div class="clearfix"></div>
+            <div class="pledge-change__content">
+              <div class="list_box"></div>
+              <div class="clearfix"></div>
+              <div class="empty-vote">
+                <img class="empty-vote__icon" src="/images/vote-empty-icon.png"/>
+                <p class="empty-vote__desc">请先导入账户</p>
+              </div>
+              <div class="pledge-load"><span>加载中...</span></div>
+            </div>
+            <button class="poll-content__btn" disabled="disabled" style="display: none;">投票</button>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </section>
+  
+
+    <div class="confirm hide">
+    <div class="confirm-content">
+      <div class="confirm-content__desc">
+        <p class="confirm-content__desc--single">EOSPacific是亚洲领先的区块链科技公司，总部设在香港。目前我们正在推广EOS技术，并致力于成为EOS区块生产者候选人。</p>
+        <p class="confirm-content__desc--single">投票仅需3步就可以完成，我们在第一步中会需要您输入您的EOS私钥，请不用担心，所有的交易都将在本台设备上完成，您的私钥将不会被上传到网络上。</p>
+        <p class="confirm-content__desc--single">在导入账户后，第二步EOS.IO将要求您质押您的EOS币以换取投票资格，您可以在任何时候撤回您质押的EOS币，撤回需要72小时</p>
+        <p class="confirm-content__desc--single">感谢您的投票！</p>
+      </div>
+      <a class="confirm-content__source">在github上浏览EOSPacific投票公开源码</a>
+      <div class="confirm-content__jump">
+        <span class="confirm-content__jump-btn">跳过</span>
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script src="/js/grayscale.js"></script>
+  <script src="/js/jquery.easing.min.js"></script> 
+  <script type="text/javascript" src="/js/vue.min.js"></script>
+  <script src="/js/bootstrap-select.min.js"></script>
+  <script type="text/javascript" src="/js/iview.min.js"></script>
+  <script src="/js/eos/require.js"></script>
+  <script src="/js/vote.js"></script>
+</div>
+
+<section class="footer container">
+  <div class="footer-content">
+    <img class="footer-content__icon" src="/images/eos-logo-footer.png" >
+    <span class="footer-content__copyright">© 2018 nodepacific tech All rights reserved</span>
+    <div class="footer-language">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="showLanguage">
+        <span class="current-language" id="languageId"><img class="dropdown-menu__icon" src="/images/eng-icon.png"/>English</span>
+        <span class="caret hide"></span>
+      </a>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</section>
+
+<section class="copyright container">
+  <div class="copyright-intro">© 2018 nodepacific tech All rights reserved</div>
+</section>
+
+
+<!-- Scripts -->
+<!-- js private -->
+<!-- <script src="/js/bootstrap-multiselect.js"></script>
+<script>
+  $('#example-single-selected').multiselect();
+</script> -->
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<script src="/js/jquery.easing.min.js"></script>
+<script>
+  if ($(window).width() < 640) {
+  $('.footer-content__copyright').hide();
+  $('.copyright').show();
+  $('.footer-language .caret').removeClass('hide');
+}
+
+//h5 点击底部的语言区可进行语言切换,采用iosSelect.js处理
+var showBankDom = document.querySelector('#showLanguage');//绑定一个触发元素
+var bankIdDom = document.querySelector('#languageId');//绑定一个存储结果的元素
+showBankDom.addEventListener('click', function () {//监听事件
+  if ($(window).width() > 769) {//手机浏览器中才可看
+    return false;
+  }
+  var bankId = showBankDom.dataset['id'];//获取元素的data-id属性值
+  var bankName = showBankDom.dataset['value'];//获取元素的data-value属性值
+  var bankSelect = new IosSelect(1, //第一个参数为级联层级，演示为1
+    [[{'id': '1', 'value': 'English', 'tip': 'english'}, {'id': '2', 'value': '中文简体', 'tip': 'zh_chs'}, {'id': '3', 'value': '中文繁體', 'tip': 'zh_cht'}]],//演示数据
+    {
+      container: '.container',//容器class
+      title: select_change.title,//标题
+      itemHeight: 50,//每个元素的高度
+      itemShowCount: 3,//每一列显示元素个数，超出将隐藏
+      oneLevelId: bankId,//第一级默认值
+      sure: '',
+      callback: function (selectOneObj) {//用户确认选择后的回调
+        var _language = selectOneObj.tip;
+        $('.dropdown-menu__li').each(function () {
+          if ($(this).attr('data-language') == _language) {
+            $('.current-language').html($(this).children('a').html());
+          }
+        })
+        current_language(_language);
+      }
+  });
+  $('.iosselect-header a.sure').html(select_change.determine);
+  $('.iosselect-header a.close').html(select_change.cancel);
+});
+</script>
+<!-- js public -->
+
+
+<!--[if lte IE 8]>
+  <script type="text/javascript">
+    var not_suggest_browser = $.cookie('not_suggest_browser');
+    if(!not_suggest_browser) {
+        operateTips('为了使您的体验更好，请使用IE8以上的浏览器或其他现代浏览器', '', '体验', '我知道了');
+    }
+    $.cookie('not_suggest_browser', 1, { path: '/', expires: 1 });
+  </script>
+<![endif]-->
+</body>
+</html>

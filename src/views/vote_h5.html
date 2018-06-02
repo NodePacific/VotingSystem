@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <title>
+          EOS Pacific     </title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-select.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/rangeslider.css">
+<link rel="stylesheet" href="/css/public.min.css">
+<link rel="stylesheet" href="/css/app_mobile/vote.min.css">
+<style>
+  .dropdown, .dropup{
+    width: 100%;
+  }
+  .dropdown .dropdown-toggle{
+    width: 100%;
+    color: #DDB273;
+    background-color: rgba(255,255,255,.1);
+    border-radius: 0;
+    border: 1px solid rgba(255,255,255,.1);
+    text-align: left;
+    display: block;
+    line-height: 39px;
+    height: 39px;
+    padding-left: 12px;
+  }
+  .dropdown-menu>li>a{
+    padding: 8px 20px 10px 29px;
+    font-size: 14px;
+    color: rgba(255,255,255,.65);
+  }
+  .open>.dropdown-menu{
+    background-color: #3F4B64;
+    width: 100%;
+    max-height: 160px;
+    overflow-y: auto;
+    color: rgba(255,255,255,.65);
+  }
+  .bootstrap-select.btn-group .dropdown-menu li.selected{
+    background-color: #1890FF;
+  }
+  .account-active{
+    color: #fff;
+  }
+  .caret{
+    float: right;
+    margin-top: 17px;
+    margin-right: 9px;
+    color: #fff;
+  }
+</style>
+  <link rel="stylesheet" href="/css/public.min.css">
+    <script src="/js/jquery.js"></script>
+</head>
+<body>
+  
+
+  <section class="import-page" style="margin-bottom: 20px;">
+  <div class="vote-account">
+    <div class="vote-account__desc">
+      <p class="vote-account__desc--intro">请输入你的私钥，你的私钥将仅用来签 名本次投票，并不会在网上保存</p>
+      <span class="confirm-content__konw--language"><span class="language" value="en">En</span> / <span class="language current_language" value="cn">中</span></span>
+    </div>
+    <textarea class="vote-account__key" type="text" placeholder="请输入私钥"></textarea>
+    <button class="vote-account__inquire"><img class="loading" src="/images/app_mobile/load-icon.png" /><span class="inqure-name">查询账户名</span></button>
+    <p class="vote-account__name"><span class="inqure-account">初始账户名：</span><span class="vote-account__name--intro">-</span>
+    </p>
+    <p class="vote-account__change">如果你有修改账户名，请输入你修改后的账户名，如果未修改账户名，请直接点击导入账户</p>
+  </div>
+  <input class="change-account" type="text" placeholder="请输入修改后的账户名" />
+  <button class="import-account" disabled="disabled"><img class="loading" src="/images/app_mobile/load-icon.png" /><span class="import-btn">导入账户</span></button>
+  <a class="vote-github-code">在github上浏览EOSPacific投票公开源码</a>
+</section>
+
+<div class="confirm" style="display:none;">
+  <div class="confirm-content">
+    <img class="confirm-content__icon" src="/images/app_mobile/confirm-icon.png">
+    <span class="confirm-content__jump"></span>
+    <div class="confirm-content__intro">
+      <div class="confirm-content__intro--desc">
+        <p class="confirm-content__intro--desc--single">EOSPacific是亚洲领先的区块链科技公司，总部设在香港。目前我们正在推广EOS技术，并致力于成为EOS区块生产者候选人。</p>
+        <p class="confirm-content__intro--desc--single">投票仅需3步就可以完成，我们在第一步中会需要您输入您的EOS私钥，请不用担心，所有的交易都将在本台设备上完成，您的私钥将不会被上传到网络上。</p>
+        <p class="confirm-content__intro--desc--single">在导入账户后，第二步EOS.IO将要求您质押您的EOS币以换取投票资格，您可以在任何时候撤回您质押的EOS币，撤回需要72小时</p>
+        <p class="confirm-content__intro--desc--single">感谢您的投票！</p>
+      </div>
+      
+      <div class="confirm-content__konw">
+        <a class="confirm-content__konw--understand konw-eos" href="./">了解EOSPacific</a>
+        <span class="confirm-content__konw--language"><span class="language" value="en">En</span> / <span class="language current_language" value="cn">中</span></span>
+        <div class="clearfix"></div>
+        <a class="confirm-content__konw--understand konw-code">在github上浏览EOSPacific投票公开源码</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="vote-page" style="display: none;">
+  <section>
+    <div class="pledge-title">
+      <span class="pledge-title--desc">质押</span>
+      <div class="confirm-content__konw--language"><span class="language" value="en">En</span> / <span class="language current_language" value="cn">中</span></div>
+    </div>
+    <ul class="pledge-account">
+      <li class="pledge-account__li">
+        <div class="pledge-account__li--balance account-balance">
+          <span class="pledge-account__li--balance--title balance-title">账户总额(EOS)：</span>
+          <div class="question-icon">
+            <div class="pledge-confirm pledge_left balance-content">
+              <p class="pledge-confirm__title">帐户总额</p>
+              <p class="pledge-confirm__desc">您账户中EOS币的总数量</p>
+              <button class="pledge-confirm__close">知道了</button>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <p class="pledge-account__li--num balance-num">0.000</p>
+      </li>
+      <li class="pledge-account__li">
+        <div class="pledge-account__li--balance pledge-already">
+          <span class="pledge-account__li--balance--title pledge-already-title">已质押(EOS)：</span>
+          <div class="question-icon">
+            <div class="pledge-confirm pledge_left pledge-content">
+              <p class="pledge-confirm__title">已质押</p>
+              <p class="pledge-confirm__desc">您账户中已经质押的EOS币数量，即您获得的投票权数量</p>
+              <button class="pledge-confirm__close">知道了</button>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <p class="pledge-account__li--num pledge-num">0</p>
+      </li>
+      <li class="pledge-account__li">
+        <div class="pledge-account__li--balance repayment">
+          <span class="pledge-account__li--balance--title repayment-title">回款中(EOS)：</span>
+          <div class="question-icon">
+            <div class="pledge-confirm repayment-content">
+              <p class="pledge-confirm__title">回款中</p>
+              <p class="pledge-confirm__desc">正在等待赎回的EOS币数量，您可通过调整质押数量进行赎回，赎回中的EOS币需要等待72小时回款</p>
+              <button class="pledge-confirm__close">知道了</button>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <p class="pledge-account__li--num repayment-num">0</p>
+      </li>
+    </ul>
+
+    <div class="clearfix"></div>
+
+    <div class="range-content">
+      <p class="range-content__intro"><span class="range-content__intro--num">0</span>EOS</p>
+      <input class="range-content__bar" type="range" min="0" data-rangeslider>
+      <p class="range-content__desc"><img class="range-content__desc--icon" src="/images/app_mobile/import-tip-icon.png"/> <span class="range-desc">调整进度条可改变质押数量</span></p>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <button class="pledge-btn">质押</button>
+    <a class="disclaimer" href="/vote/disclaimer">免责声明</a>
+    <!-- <a class="vote-github-code">在github上浏览EOS Pacific投票公开源码</a>  -->
+    <div class="pledge-title vote-title">投票</div>
+    <div class="pledge-change">
+      <div class="pledge-change__single" style="width: auto;">
+        <span class="pledge-change__single--inteo" style="width:auto;">EOS Pacific（推荐）</span>
+        <input class="pledge-change__single--checked" type="checkbox" name="pledge" checked="checked" disabled/>
+      </div>
+      <div class="clearfix"></div>
+      <div class="pledge-list">
+        <div class="list_box"></div>
+        <div class="pledge-load"><span>加载中...</span></div>
+      </div>
+    </div>
+    <div class="clearfix bottom-height"></div>
+    <div class="contact"><span class="contact-desc">如需参与竞选，请联系我们：</span><br/>eos.pacific@nodepacific.com</div>
+  </section>
+  <div style="height:50px;"></div>
+  <button class="vote-btn">投票</button>
+</section>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/bootstrap-select.min.js"></script>
+<script src="/js/eos/require.js"></script>
+<script src="/js/app_mobile/vote.js"></script>
+
+
+    <div class="confirm-tip">
+    <div class="confirm-tip__content">
+      <dl class="tip-dl">
+        <dt class="tip-dl__dt"><img class="tip-dl__dt--img" src="/images/app_mobile/import-tip-icon.png"></dt>
+        <dd class="tip-dl__dd">请输入私钥！</dd>
+      </dl>
+    </div>
+  </div>
+  <!-- js private -->
+  
+  <script>
+    $(function () {
+      $('.confirm-tip .confirm-tip__content').css('height', $('.tip-dl .tip-dl__dd').height()+19+19+'px');
+    })
+  </script>
+</body>
+</html>
