@@ -1,7 +1,5 @@
 # Node Pacific vote system
 
-====
-
 ## 概述
 
 Node Pacific 投票系统源代码，公开透明，不会泄露用户的私钥，请您放心使用。
