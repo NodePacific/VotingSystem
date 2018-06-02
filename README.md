@@ -9,10 +9,6 @@ Node Pacific 投票系统源代码，公开透明，不会泄露用户的私钥�
 ## 说明
 
 
-## 文档
-
-WeUI 说明文档参考 [Wiki](https://github.com/weui/weui/wiki)
-
 ## License
 The MIT License(http://opensource.org/licenses/MIT)
 请自由地享受和参与开源
