@@ -1,4 +1,4 @@
-# Node Pacific vote system
+# Node Pacific Voting System
 
 ## 概述
 
