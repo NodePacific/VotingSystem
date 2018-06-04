@@ -1,4 +1,4 @@
-# Node Pacific EOS 节点竞选投票系统
+# EOS Pacific 投票系统
 
 EOS Pacific是亚洲领先的区块链技术公司-节点亚太（NodePacific Tech）的投票系统，我们节点亚太总部位于香港，正在推广EOS技术并致力于成为EOS区块生产者候选人。
 
