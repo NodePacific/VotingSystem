@@ -1,0 +1,953 @@
+//out: ../css/vote.min.css, compress: true, sourceMap: false
+
+.vote{
+  width: 100%;
+  min-width: 1200px;
+  background-color: #161A34;
+  .vote-content{
+    width: 1077px;
+    padding-top: 151px;
+    padding-bottom: 91px;
+    margin: 0  auto; 
+  }
+}
+.container{
+  min-width: 1200px;
+}
+.import-account, .pledge{
+  width: 100%;
+  .import-account__title, .pledge-title{
+    font-size: 24px;
+    line-height: 33px;
+    color: #fff;
+    position: relative;
+    &::after{
+      content: '';
+      width: 19px;
+      height: 3px;
+      border-radius: 1.5px;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      display: block;
+      background: -webkit-linear-gradient(left bottom, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Safari 5.1 - 6.0 */
+      background: -o-linear-gradient(top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Opera 11.1 - 12.0 */
+      background: -moz-linear-gradient(top right,rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Firefox 3.6 - 15 */
+      background: linear-gradient(to top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* 标准的语法（必须放在最后） */
+    }
+  }
+  .import-account__key{
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, .7);
+    text-align: left;
+    .import-account__key--map{
+      font-size: 14px;
+      color: #5383E6;
+      line-height: 20px;
+      text-decoration: underline;
+      margin-left: 10px;
+      &:active, &:active{
+        color: #5383E6;
+      }
+    }
+  }
+  .import-account__inqure, .import-account__import{
+    width: 100%;
+    height: 60px;
+    margin-top: 28px;
+    .import-account__inqure--btn, .import-account__import--btn{
+      width: 240px;
+      height: 54px;
+      border-radius: 30px;
+      font-size: 16px;
+      color: #fff;
+      float: right;
+      outline: none;
+      border: none;
+      background: -webkit-linear-gradient(left bottom, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Safari 5.1 - 6.0 */
+      background: -o-linear-gradient(top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Opera 11.1 - 12.0 */
+      background: -moz-linear-gradient(top right,rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Firefox 3.6 - 15 */
+      background: linear-gradient(to top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* 标准的语法（必须放在最后） */
+    }
+    .import-account__import--btn{
+      background: #737C8F;
+      &.import-start{
+        background: -webkit-linear-gradient(left bottom, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(top right,rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Firefox 3.6 - 15 */
+        background: linear-gradient(to top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* 标准的语法（必须放在最后） */
+      }
+    }
+    .input-box{
+      width: 805px;
+    }
+    .input-box .input-box__detail{
+      width: 94%;
+    }
+  }
+  .import-account__name{
+    font-size: 14px;
+    color: rgba(255, 255, 255, .7);
+    line-height: 20px;
+    text-align: left;
+    margin-top: 20px;
+    .import-account__name--desc{
+      &.vote-name{
+        color: #DDB273;
+        font-size: 18px;
+        line-height: 25px;
+      }
+    }
+  }
+  .import-account__change{
+    font-size: 14px;
+    color: rgba(255, 255, 255, .7);
+    line-height: 20px;
+    margin-top: 27px;
+    text-align: left;
+  }
+}
+.pledge{
+  margin-top: 30px;
+}
+.pledge-content{
+  width: 100%;
+  margin-top: 30px;
+  min-height: 221px;
+  .pledge-content__account{
+    float: left;
+    width: 530px;
+    min-height: 221px;
+    border-radius: 4px;
+    padding-bottom: 10px;
+    background-color: rgba(255, 255, 255, .1);
+    .pledge-content__account--asset{
+      width: 100%;
+      margin-top: 32px;
+      .pledge-content__account--asset--single{
+        float: left;
+        width: 30%;
+        position: relative;
+        padding-left: 20px;
+        &::after{
+          content: '';
+          display: block;
+          width: 1px;
+          height: 24px;
+          background-color: rgba(255, 255, 255, .17);
+          position: absolute;
+          right: 0;
+          top: 5px;
+        }
+        &:last-child{
+          &::after{
+            display: none;
+          }
+        }
+        &:first-child{
+          padding-left: 20px;
+          width: 40%;
+        }
+        .pledge-content__account--asset--single--title{
+          font-size: 12px;
+          color: #D3D6E2;
+          line-height: 17px;
+          padding-left: 20px;
+          &.account-balance{
+            &::after{
+              content: '';
+              display: block;
+              width: 16px;
+              height: 16px;
+              position: absolute;
+              background-image: url('../images/app_mobile/pledge-icon.png');
+              background-repeat: no-repeat;
+              background-size: contain;
+              left: 20px;
+              top: 0;
+            }
+          }
+          &.pledge-already{
+            &::before{
+              content: '';
+              display: block;
+              width: 16px;
+              height: 16px;
+              position: absolute;
+              background-image: url('../images/app_mobile/account-total.png');
+              background-repeat: no-repeat;
+              background-size: contain;
+              left: 20px;
+              top: 0;
+            }
+          }
+          &.repayment{
+            &::before{
+              content: '';
+              display: block;
+              width: 16px;
+              height: 16px;
+              position: absolute;
+              background-image: url('../images/app_mobile/pledge-icon.png');
+              background-repeat: no-repeat;
+              background-size: contain;
+              left: 20px;
+              top: 0;
+            }
+          }
+        }
+        .pledge-content__account--asset--single--num{
+          font-size: 17px;
+          line-height: 24px;
+          margin-top: 5px;
+          font-weight: bold;
+          color: #ADB0C2;
+          width: 96%;
+          .pledge-content__account--asset--single--num--unit{
+            font-size: 24px;
+            line-height: 45px;
+            color: #fff;
+            margin-right: 8px;
+            font-weight: normal;
+            &.pledge-num{
+              color: #5383E6;
+            }
+            &.repayment-num{
+              color: #DDB273;
+            }
+          }
+        }
+      }
+    }
+    .pledge-content__account--desc{
+      width: 450px;
+      margin-top: 12px;
+      margin-left: 20px;
+      .pledge-content__account--desc--single{
+        color: #ADB0C2;
+        font-size: 12px;
+        line-height: 17px;
+        margin-top: 5px;
+        text-align: left;
+      }
+    }
+  }
+  .pledge-content__bar{
+    float: right;
+    width: 530px;
+    height: 221px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, .1);
+    .pledge-content__bar--content{
+      width: 436px;
+      margin: 20px auto;
+      .range-content{
+        width: 100%;
+        height: 4px;
+        .range-content__intro{
+          color: #ADB0C2;
+          font-size: 17px;
+          line-height: 24px;
+          margin-top: 20px;
+          text-align: center;
+          .range-content__intro--num{
+            font-size: 38px;
+            line-height: 45px;
+            color: #fff;
+            font-weight: bold;
+            margin-right: 12px; 
+          }
+        }
+        .range-content__bar{
+          margin-top: 18px;
+        }
+        .range-content__desc{
+          margin-top: 23px;
+          text-align: center;
+          .range-content__desc--icon{
+            width: 15px;
+            margin-top: -4px;
+          }
+        }
+        .pledge-btn{
+          width: 240px;
+          height: 54px;
+          border-radius: 30px;
+          border: none;
+          outline: none;
+          margin-left: 98px;
+          margin-top: 20px;
+          background: #737C8F;
+          font-size: 16px;
+          color: #fff;
+          &.pledge_start{
+            background: -webkit-linear-gradient(left bottom, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(top right,rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Firefox 3.6 - 15 */
+            background: linear-gradient(to top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* 标准的语法（必须放在最后） */
+          }
+        }
+      }
+    }
+  }
+}
+.rangeslider, .rangeslider__fill{
+  width: 95%;
+  height: 4px;
+  background: rgba(255, 255, 255, .2); 
+}
+.rangeslider{
+  margin-top: 18px;
+}
+.rangeslider__fill--bgd{
+  background: #477AE2;
+}
+.rangeslider__fill{
+  width: 100%;
+}
+.rangeslider__handle{
+  width: 16px;
+  height: 16px;
+  top: -6px;
+}
+.confirm{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .65);
+  display: block;
+  .confirm-content{
+    width: 523px;
+    min-height: 550px;
+    background-color: #fff;
+    border-radius: 4px;
+    // position: absolute;
+    left: 50%;
+    margin-left: -261.5px;
+    top: 50%;
+    margin-top: -275px;
+    padding: 0;
+    padding-top: 50px;
+    .confirm-content__desc{
+      width: 100%;
+      height: 340px;
+      overflow-y: auto;
+      padding: 0 42px 0;
+      .confirm-content__desc--single{
+        font-size: 16px;
+        color: rgba(0, 0, 0, .65);
+        line-height: 22px;
+        margin-top: 22px;
+        text-align: left;
+        &:first-child{
+          margin-top: 0;
+        }
+      }
+    }
+    .confirm-content__source{
+      padding: 0 42px;
+      font-size: 16px;
+      color: #5383E6;
+      line-height: 22px;
+      text-decoration: underline;
+      margin-top: 30px;
+      text-align: left;
+      display: block;
+    }
+    .confirm-content__jump{
+      width: 100%;
+      margin-top: 38px;
+      height: 70px;
+      border-top: 1px solid rgba(0, 0, 0, .09);
+      .confirm-content__jump-btn{
+        min-width: 88px;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 40px;
+        background-color: #1890FF;
+        border-radius: 4px;
+        display: block;
+        line-height: 40px;
+        text-align: center;
+        float: right;
+        margin-right: 37px;
+        margin-top: 16px;
+        font-size: 14px;
+        color: #fff;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+.poll{
+  width: 100%;
+  margin-top: 30px;
+  .poll-title{
+    font-size: 24px;
+    line-height: 33px;
+    color: #fff;
+    position: relative;
+    &::after{
+      content: '';
+      width: 19px;
+      height: 3px;
+      border-radius: 1.5px;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      display: block;
+      background: -webkit-linear-gradient(left bottom, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Safari 5.1 - 6.0 */
+      background: -o-linear-gradient(top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Opera 11.1 - 12.0 */
+      background: -moz-linear-gradient(top right,rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Firefox 3.6 - 15 */
+      background: linear-gradient(to top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* 标准的语法（必须放在最后） */
+    }
+  }
+  .poll-content{
+    width: 100%;
+    height: 651px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, .1);
+    margin-top: 22px;
+    &::-o-scrollbar{
+      display: none;
+    }
+    &::-moz-scrollbar{
+      display: none;
+    }
+    .poll-content__btn{
+      width: 240px;
+      height: 54px;
+      border-radius: 30px;
+      float: right;
+      background: #737C8F;
+      outline: none;
+      border: none;
+      margin-top: 30px;
+      font-size: 16px;
+      color: #fff;
+      &.vote_start{
+        background: -webkit-linear-gradient(left bottom, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(top right,rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Firefox 3.6 - 15 */
+        background: linear-gradient(to top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* 标准的语法（必须放在最后） */
+      }
+    }
+    .poll-content__append{
+      float: right;
+      margin-top: 14px;
+      clear: both;
+      display: none;
+      .poll-content__append--icon{
+        width: 12px;
+        float: left;
+        margin-right: 4px;
+        margin-top: 4px;
+      }
+      .poll-content__append--desc{
+        font-size: 12px;
+        color: #ADB0C2;
+        line-height: 17px;
+      }
+    }
+  }
+  .poll-show{
+    font-size: 16px;
+    color: #AFBBD4;
+    line-height: 22px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .poll-disclaimer{
+    font-size: 16px;
+    margin-top: 9px;
+    text-align: center;
+    .poll-disclaimer__watch{
+      color: #AFBBD4;
+      margin-right: 4px;
+    }
+    .poll-disclaimer__desc{
+      color: #5383E6;
+      text-decoration: underline;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}
+.pledge-change{
+  padding: 46px 52px 50px 40px;
+  .pledge-change__optional{
+    font-size: 18px;
+    color: rgba(175, 187, 212, .3);
+    margin-top: 11px;
+    line-height: 25px; 
+    text-align: left;
+    clear: both;
+  }
+  .pledge-change__content{
+    width: 100%; 
+    height: 420px;
+    margin-top: 11px;
+    overflow-y: auto;
+    &::-webkit-scrollbar{
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track-piece{/*内层轨道，滚动条中间部分（位置4）*/  
+      background:rgba(255, 255, 255, .2); 
+      border-radius: 2.5px;
+      -webkit-box-shadow: 0 0 2px rgba(87,90,206,.64); 
+    }
+    &::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+      border-radius: 2.5px;
+      background: rgba(255,255,255,.8);
+    }
+  }
+}
+.pledge-change__single{
+  width: 182px;
+  float: left;
+  margin-top: 15px;
+  margin-left: 80px;
+  font-size: 18px;
+  line-height: 25px;
+  .pledge-change__single--inteo{
+    display: block;
+    float: left;
+    width: 83%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    line-height: 25px;
+    color: #AFBBD4;
+  }
+  &.left_change{
+    margin-left: 0;
+  }
+  .pledge-change__single--checked{
+    float: right;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    margin: 3px 0 0;
+    -webkit-appearance: none;
+    outline: none!important;
+    border: none;
+    background-image: url('../images/app_mobile/unchange-icon.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    &:checked{
+      background-image: url('../images/app_mobile/success-icon.png');
+    }
+  }
+}
+.pledge-load{
+  font-size: 16px;
+  line-height: 24px;
+  color: #AFBBD4;
+  text-align: center;
+  clear: both;
+  margin: 10px auto;
+  display: none;
+  &>span{
+    position: relative;
+    padding-left: 30px;
+    &::before{
+      content: '';
+      display: block;
+      background-image: url('../images/app_mobile/load-icon.png');
+      animation: loading 1s infinite linear;
+      width: 19px;
+      height: 19px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+.loading{
+  width: 21px;
+  margin-right: 11px;
+  animation: loading 1s infinite linear;
+  vertical-align: top;
+  display: none;
+}
+@-webkit-keyframes loading{
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading{
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.empty-vote{
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 92px;
+  text-align: center;
+  .empty-vote__desc{
+    font-size: 16px;
+    color: #ADB0C2;
+    line-height: 22px;
+    margin: 0 auto;
+    margin-top: 24px;
+    width: 300px;
+    padding-left: 40px;
+  }
+  .empty-vote__icon{
+    width: 129px;
+  }
+}
+.disclaimer-content{
+  width: 1080px;
+  margin: 131px auto 64px;
+  background-color: rgba(255, 255, 255, .1);
+  padding: 70px 60px;
+  .disclaimer-content__title{
+    font-size: 24px;
+    line-height: 33px;
+    color: #fff;
+    position: relative;
+    &::after{
+      content: '';
+      width: 19px;
+      height: 3px;
+      border-radius: 1.5px;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      display: block;
+      background: -webkit-linear-gradient(left bottom, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Safari 5.1 - 6.0 */
+      background: -o-linear-gradient(top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Opera 11.1 - 12.0 */
+      background: -moz-linear-gradient(top right,rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Firefox 3.6 - 15 */
+      background: linear-gradient(to top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* 标准的语法（必须放在最后） */
+    }
+  }
+  .diclaimer-content__desc--single{
+    color: #ADB0C2;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: left;
+    margin-top: 25px;
+    &:first-child{
+      margin-top: 25px;
+    }
+  }
+}
+.disclaimer{
+  font-size: 16px;
+  color: #5383E6;
+  line-height: 22px;
+  margin-top: 20px;
+  text-align: left;
+  padding: 0 42px;
+  display: block;
+  text-decoration: underline;
+  &:hover,&:active{
+    color: #5383E6;
+    text-decoration: underline;
+  }
+}
+.mapping{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .65);
+  display: none;
+  .mapping-content{
+    width: 822px;
+    height: 294px;
+    border-radius: 4px;
+    top: 50%;
+    margin-top: -147px;
+    left: 50%;
+    margin-left: -411px;
+    position: absolute;
+    padding: 15px 16px 20px 27px;
+    background-color: #fff;
+    .mapping-content__title{
+      font-size: 16px;
+      color: #000;
+      line-height: 22px;
+      margin-top: 5px;
+      text-align: left;
+      position: relative;
+      padding-left: 14px; 
+      z-index: 1;
+      &::before{
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: -webkit-linear-gradient(left bottom, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(top right,rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Firefox 3.6 - 15 */
+        background: linear-gradient(to top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* 标准的语法（必须放在最后） */
+        position: absolute;
+        left: 0;
+        top: 8px;
+      }
+    }
+    .mapping-content__inquire{
+      width: 100%;
+      margin-top: 23px;
+    }
+    .mapping-content__confirm{
+      width: 135px;
+      height: 50px;
+      border-radius: 4px;
+      border: none;
+      outline: none;
+      margin-top: 39px;
+      font-size: 16px;
+      color: #fff;
+      margin-left: 317px;
+      background: -webkit-linear-gradient(left bottom, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Safari 5.1 - 6.0 */
+      background: -o-linear-gradient(top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Opera 11.1 - 12.0 */
+      background: -moz-linear-gradient(top right,rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Firefox 3.6 - 15 */
+      background: linear-gradient(to top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* 标准的语法（必须放在最后） */
+    }
+    .mapping-content__close{
+      width: 13px;
+      float: right;
+      position: relative;
+      z-index: 3;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    .mapping-content__account{
+      font-size: 14px;
+      color: rgba(255, 255, 255, .7);
+      line-height: 20px;
+      text-align: left;
+      margin-top: 20px;
+      .mapping-content__account--desc{
+        font-size: 13px;
+        color: #000;
+        line-height: 18px;
+        text-align: left;
+        float: left;
+        padding-top: 16px;
+      }
+      .dropdown, .dropup{
+        width: 286px;
+        height: 50px;
+        border: 1px solid rgba(86, 99, 127, .3);
+        display: block;
+        float: left;
+        &.vote-name{
+          color: #DDB273;
+          font-size: 18px;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+}
+.public-key{
+  width: 615px;
+  height: 50px;
+  background-color: #fff;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid rgba(43, 49, 71, .2);
+  float: left;
+  .public-key__input{
+    height: 21px;
+    width: 94%;
+    float: left;
+    margin-top: 14px;
+    border: none;
+    outline: none;
+    color: #333;
+    font-size: 16px;
+    margin-left: 18px;
+    background-color: transparent;
+  }
+}
+.mapping-content__inquire--btn{
+  width: 135px;
+  height: 50px;
+  font-size: 14px;
+  color: #3879EB;
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid;
+  margin-left: 11px;
+  background-color: #fff;
+  background: #fff;
+  border-image: -webkit-linear-gradient(rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)) 1 1; /* Safari 5.1 - 6.0 */
+  border-image: -o-linear-gradient(rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)) 1 1; /* Opera 11.1 - 12.0 */
+  border-image: -moz-linear-gradient(rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)) 1 1; /* Firefox 3.6 - 15 */
+  border-image: linear-gradient(rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)) 1 1; /* 标准的语法（必须放在最后） */
+}
+.private-confirm{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .65);
+  display: none;
+  .private-confirm__content{
+    width: 554px;
+    min-height: 259px;
+    border-radius: 4px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -277px;
+    margin-top: -164px;
+    padding: 15px 17px 24px 32px;
+    .private-confirm__content--title{
+      font-size: 20px;
+      line-height: 28px;
+      color: #000; 
+      text-align: left;
+      position: relative;
+      padding-left: 14px;
+      z-index: 1;
+      &::before{
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: -webkit-linear-gradient(left bottom, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(top right,rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* Firefox 3.6 - 15 */
+        background: linear-gradient(to top right, rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)); /* 标准的语法（必须放在最后） */
+        position: absolute;
+        left: 0;
+        top: 10px;
+      }
+    }
+    .private-confirm__content--close{
+      width: 13px;
+      float: right;
+      position: relative;
+      z-index: 3;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    .private-confirm__content--desc{
+      font-size: 14px;
+      color: #000;
+      line-height: 20px;
+      margin-top: 38px;
+      text-align: left;
+    }
+    .private-confirm__content--btn{
+      width: 118px;
+      height: 44px;
+      border-radius: 4px;
+      margin-top: 40px;
+      margin-left: 186px;
+      border: 1px solid;
+      border-image: -webkit-linear-gradient(rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)) 1 1; /* Safari 5.1 - 6.0 */
+      border-image: -o-linear-gradient(rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)) 1 1; /* Opera 11.1 - 12.0 */
+      border-image: -moz-linear-gradient(rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)) 1 1; /* Firefox 3.6 - 15 */
+      border-image: linear-gradient(rgba(71, 122, 226, 1) , rgba(89, 165, 241, 1)) 1 1; /* 标准的语法（必须放在最后） */
+      font-size: 16px;
+      color: #3879EB;
+      outline: none;
+      background-color: #fff;
+      background: #fff;
+    }
+  }
+}
+.import-account__change--private{
+  font-size: 14px;
+  color: #5281E3;
+  line-height: 20px;
+  text-decoration: underline;
+  margin-left: 4px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.disclaimer-confirm{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .65);
+  display: none;
+  .disclaimer-confirm__content{
+    width: 523px;
+    height: 615px;
+    border-radius: 4px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -261.5px;
+    margin-top: -307.5px; 
+    .disclaimer-confirm__content--title{
+      color: rgba(0, 0, 0, .65);
+      font-size: 24px;
+      line-height: 33px;
+      font-weight: bold;
+      padding-top: 48px;
+      padding-left: 42px;
+      text-align: left;
+    }
+    .disclaimer-confirm__content--intro{
+      font-size: 16px;
+      color: rgba(0, 0, 0, .65);
+      line-height: 22px;
+      text-align: left;
+      height: 400px;
+      overflow-y: auto;
+      margin-top: 15px;
+      padding-left: 42px;
+      padding-right: 42px;
+    }
+  }
+  .disclaimer-confirm__content--footer{
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, .09); 
+    margin-top: 48px;
+    .disclaimer-confirm__content--footer--know{
+      width: 88px;
+      height: 40px;
+      border-radius: 4px;
+      background-color: #1890FF;
+      outline: none;
+      border: none;
+      float: right;
+      margin-right: 36px;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #fff;
+    }
+  }
+}

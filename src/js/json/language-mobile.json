@@ -1,0 +1,257 @@
+{
+  "zhChs": {
+    "title": ["主页", "EOS Pacific"],
+    "importAccount": {
+      "title": "导入账户",
+      "keyDesc": "请输入EOS账户名，如果您操作的是初始映射账户",
+      "clickInquireDesc": "点击查询初始映射账户名",
+      "keyPlaceholder": "请输入私钥",
+      "inquireAccount": "查询账户名",
+      "inquireName": "初始账户名：",
+      "inquireDesc": "请输入该账户对应的EOS",
+      "accountNamePlaceholder": "请输入账户名",
+      "importBtn": "导入账户",
+      "active_key": "Active私钥",
+      "private_worry": "，请不用担心，您的私钥仅用来对本次投票进行签名，不会被上传到网络上。"
+    },
+    "mapping": {
+      "title": "查询初始映射账户名",
+      "inquireBtn": "查询",
+      "start_account": "查询账户名：",
+      "confirmBtn": "确认",
+      "public_placeholder": "请输入EOS公钥"
+    },
+    "private_active": {
+      "title": "Active私钥",
+      "desc": "EOS 默认本地账户分为两种角色：Owner 和 Active。<br/>Owner 拥有最高权限，可以管理 Active 和其他角色。<br/>Active 用于日常使用，比如转账、投票。<br/>单私钥模式：Owner 和 Active 使用同一把私钥。<br/>双私钥模式：Owner 和 Active 使用不同私钥。<br/>如果您只有一把私钥，那么您默认使用的是单私钥模式，请直接输入私钥导入账户即可。",
+      "know": "知道了"
+    },
+    "pledge": {
+      "title": "质押",
+      "total": "账户总额(EOS)：",
+      "pledgeAlready": "已质押(EOS)：",
+      "repayment": "回款中(EOS)：",
+      "totalTitle": "账户总额",
+      "totalDesc": "您账户中EOS总数量",
+      "pledgeAlreadyTitle": "已质押",
+      "pledgeAlreadyDesc": "您账户中已经质押的EOS数量，即您已获得的票数",
+      "repaymentTitle": "回款中",
+      "repaymentDesc": "赎回中的EOS数量。您可通过调整质押数量申请赎回，申请赎回的EOS将在72小时后到账。赎回中的EOS可以质押，但无法进行交易。",
+      "barDesc": "调整进度条可改变质押数量",
+      "pledgeBtn": "质押",
+      "konw_btn": "知道了",
+      "showNode": "如需展示您的节点，请提供节点信息给我们：eos.pacific@nodepacific.com",
+      "disclaimerTitle": "点击查看《EOS Pacific投票系统免责声明》"
+    },
+    "poll": {
+      "title": "投票",
+      "pollBtn": "投票",
+      "pollDesc": "如果您之前已经进行过投票，本次投票将追加到您之前的投票结果中"
+    },
+    "jump": {
+      "desc": ["我们EOS Pacific由亚洲领先的区块链技术公司提供支持，总部位于香港。 我们正在推广EOS技术和致力于成为EOS区块生产者。", "投票仅需3步就可以完成，我们在第一步中会要求您输入您的账户名和EOS Active私钥。如果您的账户是初始映射账户，我们提供了通过您的EOS公钥查询EOS账户名的功能。关于私钥的安全性，请不用担心，所有的交易都将在本台设备上完成，您的私钥将不会保存或被上传到网络上。", "在导入账户后，第二步EOS.IO将要求您质押您的EOS以换取投票资格，并且只能质押整数倍的EOS。您可以随时申请赎回质押的EOS，申请赎回的EOS将在72小时后到账。赎回中的EOS可以质押，但无法进行交易。", "质押EOS后，第三步需要您投票给自己认可的超级节点。一个EOS通过质押后可以换取一票，一票最多可以同时投30个候选节点，每个候选节点不可重复投票。", "感谢您的投票！"],
+      "know": "了解EOS Pacific",
+      "jump_btn": "知道了",
+      "jump_icon": "../images/app_mobile/confirm-icon.png"
+    },
+    "code": "EOS Pacific投票系统源码已公开，点击查看",
+    "disclaimer": "免责声明",
+    "recommend": "推荐",
+    "import_account": "请先导入账户！",
+    "email_desc": "如需展示您的节点，请提供节点信息给我们：",
+    "tip": {
+      "tip1": "请输入公钥！",
+      "tip2": "查询失败，请重试！",
+      "tip3": "导入失败，请重试！",
+      "tip4": "质押成功！",
+      "tip5": "取消质押成功！",
+      "tip6": "质押失败！质押至少需要一个EOS！",
+      "tip7": "质押失败，请重试！",
+      "tip8": "投票成功！",
+      "tip9": "投票成功25票，失败5票！",
+      "tip10": "最多可投30票！",
+      "tip11": "投票失败，请重试！",
+      "tip_tick": "票",
+      "tip_suc": "投票成功",
+      "tip_fail": "失败"
+    },
+    "disclaimerConfirm": {
+      "title": "EOS Pacific投票系统免责声明",
+      "intro": "EOS Pacific（以下称“EOS Pacific或我们”）提醒您，在使用EOS Pacific前，请您务必仔细阅读并透彻理解本声明。您可以选择不使用EOS Pacific，但如果您使用EOS Pacific，您的使用行为将被视为对本声明全部内容的认可。<br/>您理解和同意，在法律所允许的范围内，EOS Pacific只能按照现有的技术水平和条件提供服务。<br/>EOS Pacific不会将您的私钥上传到网络上，如果您在其他地方操作了您的私钥导致私钥丢失，EOS Pacific不承担任何责任。<br/>请认准EOS Pacific准确的域名地址www.nodepacific.com，如果您访问了假冒的网址造成损失，EOS Pacific不承担任何责任。<br/>如果EOS主网未能成功开启，导致质押或投票失败，EOS Pacific不承担任何责任。<br/>因EOS官方快照存在出入产生的问题，包括但不限于无法导入账户，EOS Pacific不承担任何责任。<br/>因EOS.IO网络问题、病毒、木马、恶意程序攻击、网络拥堵、系统不稳定、系统或设备故障、通讯故障、电力故障、银行等原因导致的质押或投票失败， EOS Pacific不承担任何责任。<br/>如果EOS主网成功开启后出现多个主网，EOS Pacific会认定全球社区共识最多的EOS主网为EOS主网，如果您有异议，可以不使用EOS Pacific投票系统。<br/>如果您在其他渠道更改了您的投票信息，导致在EOS Pacific上投票失败，EOS Pacific不承担任何责任。<br/>由于被投票的区块生产者节点可能会修改他们的EOS账户，而这个修改将会是非实时的，如果在您投票期间，由于块生产者节点修改了他们的EOS账户而导致的投票失败，EOS Pacific不承担任何责任。<br/>如果EOS宪法有更改任何关于投票的信息，EOS Pacific不负责向您更新资讯，EOS Pacific将以EOS最新宪法来执行本次投票。<br/>如果EOS.IO网络因任何外力导致主网失败或项目解散，包括但不限于地震、高层离职、黑客事件，EOS Pacific不承担任何责任。<br/>请您知悉，EOS Pacific的投票是基于公开公正原则的，EOS Pacific不会以任何形式向您索要报酬，也不会以任何形式对您进行贿选。<br/>除非法律法规明确要求，否则，EOS Pacific没有义务对所有用户的信息数据、数字资产信息、交易行为以及与交易有关的其它事项进行事先审查<br/>您了解并同意，由于数字资产领域的法律法规、政策尚未健全，因法律法规、政策的变化，EOS Pacific平台可能因不符合法律法规、政策的规定或应政府要求而被暂时或永久关停，如因此给您造成任何损失的，EOS Pacific不承担任何责任。<br/>EOS Pacific的内容会随时更改并不作另行通知，EOS Pacific已采取合理措施确保EOS Pacific资讯的准确性，但并不保证其准确性程度，亦不会接受任何因为EOS Pacific上的资讯或因未能连接互联网、传送或接收任何通知和信息时的延误或失败而直接或间接造成的损失。<br/>您同意通过EOS Pacific所提供的服务受制于中华人民共和国香港特别行政区及用户所在国的相关法律法规和管理条例，当本服务与之发生冲突时，应以各地的法律法规和管理条例为最高准则。任何通过EOS Pacific直接或间接违反当地法律法规和管理条例的行为，该后果应由用户承担。"
+    },
+    "disclaimer_desc": [
+      "EOS Pacific（以下称“EOS Pacific或我们”）提醒您，在使用EOS Pacific前，请您务必仔细阅读并透彻理解本声明。您可以选择不使用EOS Pacific，但如果您使用EOS Pacific，您的使用行为将被视为对本声明全部内容的认可。","您理解和同意，在法律所允许的范围内，EOS Pacific只能按照现有的技术水平和条件提供服务。",
+      "EOS Pacific不会将您的私钥上传到网络上，如果您在其他地方操作了您的私钥导致私钥丢失，EOS Pacific不承担任何责任。","请认准EOS Pacific准确的域名地址www.nodepacific.com，如果您访问了假冒的网址造成损失，EOS Pacific不承担任何责任。", "如果EOS主网未能成功开启，导致质押或投票失败，EOS Pacific不承担任何责任。", "因EOS官方快照存在出入产生的问题，包括但不限于无法导入账户，EOS Pacific不承担任何责任。", "因EOS.IO网络问题、病毒、木马、恶意程序攻击、网络拥堵、系统不稳定、系统或设备故障、通讯故障、电力故障、银行等原因导致的质押或投票失败， EOS Pacific不承担任何责任。", "如果EOS主网成功开启后出现多个主网，EOS Pacific会认定全球社区共识最多的EOS主网为EOS主网，如果您有异议，可以不使用EOS Pacific投票系统。", "如果您在其他渠道更改了您的投票信息，导致在EOS Pacific上投票失败，EOS Pacific不承担任何责任。", "由于被投票的区块生产者节点可能会修改他们的EOS账户，而这个修改将会是非实时的，如果在您投票期间，由于块生产者节点修改了他们的EOS账户而导致的投票失败，EOS Pacific不承担任何责任。", "如果EOS宪法有更改任何关于投票的信息，EOS Pacific不负责向您更新资讯，EOS Pacific将以EOS最新宪法来执行本次投票。", "如果EOS.IO网络因任何外力导致主网失败或项目解散，包括但不限于地震、高层离职、黑客事件，EOS Pacific不承担任何责任。", "请您知悉，EOS Pacific的投票是基于公开公正原则的，EOS Pacific不会以任何形式向您索要报酬，也不会以任何形式对您进行贿选。", "除非法律法规明确要求，否则，EOS Pacific没有义务对所有用户的信息数据、数字资产信息、交易行为以及与交易有关的其它事项进行事先审查。", "您了解并同意，由于数字资产领域的法律法规、政策尚未健全，因法律法规、政策的变化，EOS Pacific平台可能因不符合法律法规、政策的规定或应政府要求而被暂时或永久关停，如因此给您造成任何损失的，EOS Pacific不承担任何责任。", "EOS Pacific的内容会随时更改并不作另行通知，EOS Pacific已采取合理措施确保EOS Pacific资讯的准确性，但并不保证其准确性程度，亦不会接受任何因为EOS Pacific上的资讯或因未能连接互联网、传送或接收任何通知和信息时的延误或失败而直接或间接造成的损失。", "您同意通过EOS Pacific所提供的服务受制于中华人民共和国香港特别行政区及用户所在国的相关法律法规和管理条例，当本服务与之发生冲突时，应以各地的法律法规和管理条例为最高准则。任何通过EOS Pacific直接或间接违反当地法律法规和管理条例的行为，该后果应由用户承担。"
+    ]
+  },
+  "english": {
+    "title": ["Home", "EOS Pacific"],
+    "importAccount": {
+      "title": "Import account",
+      "keyDesc": "Please input your EOS account name, if you are working with the initial mapping account.",
+      "clickInquireDesc": "Check the initial mapping account name, click here",
+      "keyPlaceholder": "Active Private Key",
+      "inquireAccount": "check account", 
+      "inquireName": "Initial account name：",
+      "inquireDesc": "Please input your",
+      "accountNamePlaceholder": "Account Name",
+      "importBtn": "import account",
+      "active_key": "EOS Active Private Key",
+      "private_worry": ". No worries, the Private Key is used to sign this vote locally and will not be sent to internet."
+    },
+    "mapping": {
+      "title": "Query the initial mapping account name",
+      "inquireBtn": "query",
+      "start_account": "Query account name:",
+      "confirmBtn": "Confirm",
+      "public_placeholder": "EOS Public Key"
+    },
+    "private_active": {
+      "title": "Active private key",
+      "desc": "The EOS default local account is consists of two roles: Owner and Active.<br/>Owner has the highest privilege to manage Active and other roles.<br/>Active for everyday use such as transfer, voting.<br/>Single private key mode: Owner and Active use the same private key.<br/>Dual private key mode: Owner and Active use different private keys.<br/>If you only have one private key, then you use the single private key mode by default. Please input the private key directly into the account.",
+      "know": "understand"
+    },
+    "pledge": {
+      "title": "Stake",
+      "total": "Total(EOS)：",
+      "pledgeAlready": "Stakes(EOS)：",
+      "repayment": "Refunding(EOS)：",
+      "totalDesc": "the total amount of EOS in your account.",
+      "pledgeAlreadyDesc": "The amount of EOS to be used as stake pledge, in other words, the votes you own",
+      "repaymentDesc": "refunding amount of EOS. You can refund by adjust the stakes amount. The EOS that is applied for redemption will be refunded after 72 hours. The redemption of EOS can be pledged, but it cannot be traded.",
+      "barDesc": "Set your amount of stakes by adjusting the bar above.",
+      "pledgeBtn": "change",
+      "konw_btn": "understand",
+      "repaymentTitle": "Refunding",
+      "pledgeAlreadyTitle": "Stake Pledge",
+      "totalTitle": "Total",
+      "showNode": "If you would like to present your Block Producer candidate, please send the information to us：eos.pacific@nodepacific.com",
+      "disclaimerTitle": "To know more about EOS Pacific Voting System Disclaimer click here"
+    },
+    "poll": {
+      "title": "Vote",
+      "pollBtn": "vote",
+      "pollDesc": "Your vote will not affect your previous vote results, and will only be appended to your previous votes. "
+    },
+    "jump": {
+      "desc": ["We, EOS Pacific, powered by an Asian leading blockchain technology company, is based in Hong Kong. We are promoting EOS technology and dedicated to be the EOS Block Producer candidate.", "Voting takes only 3 steps, and in the first step we ask you to input your account name and the EOS Active Private Key. If your account is an initial mapping account, we provide the ability to query the EOS account name through your EOS Public Key. Regarding the security of the Private Key, please do not worry, all transactions will be completed on this device, and your Private Key will not be saved or uploaded to the network.", "In the step 2, after your account being imported, EOS.IO would require EOS as stake pledge for the voting rights, and the stake pledge must be an integral multiple of single EOS. You can apply for redemption of the pledged EOS at any time, and the EOS that is applied for redemption will be refunded after 72 hours. The redemption of EOS can be pledged, but it cannot be traded.", "After EOS being used as stake pledge, In the step 3, you would have right to vote for the Block Producer by your own choice. Each pledged EOS can be exchanged intoone vote and you can select up to 30 Block Producer candidates using one vote. No repeated voting for the same candidate is allowed for each vote.", "Thanks for voting EOS Pacific!"],
+      "know": "Learn about EOS Pacific",
+      "jump_btn": "understand",
+      "jump_icon": "../images/app_mobile/confirm-icon-en.png"
+    },
+    "code": "Check out the EOS Pacific Voting Open Source code, click here",
+    "disclaimer": "DECLARATION",
+    "recommend": "Recommend",
+    "import_account": "Please import the account!",
+    "email_desc": "If you would like us to present your block producer candidate, please send your candidate information to us：",
+    "tip": {
+      "tip1": "Please input public key",
+      "tip2": "Query failed, Please retry",
+      "tip3": "Import failed, Please retry!",
+      "tip4": "Stakes successfully!",
+      "tip5": "Unstake successfully!",
+      "tip6": "Stakes failed！ Need have one EOS to stakes at least!",
+      "tip7": "Stakes failed，Please retry！",
+      "tip8": "Voting successful!",
+      "tip9": "25 votes successful, 5 failed!",
+      "tip10": "30 voting at most!",
+      "tip11": "Voting failed，Please retry！",
+      "tip_tick": "votes",
+      "tip_suc": "successful",
+      "tip_fail": "failed"
+    },
+    "disclaimerConfirm": {
+      "title": "EOS Pacific Voting System Disclaimer",
+      "intro": "EOS Pacific reminds you that you must read carefully and thoroughly understand this statement before using EOS Pacific Service. You can choose not to use EOS Pacific Service, but if you use EOS Pacific Service, you will be regarded as an endorsement of all the contents of this statement.<br/>You understand and agree that, to the extent permitted by law, EOS Pacific can only provide services according to the existing technical level and conditions.<br/>EOS Pacific will not upload your private key to the network, EOS Pacific is not responsible for any loss of your private key.<br/>Please confirm the exact domain name address of EOS Pacific（www.nodepacific.com）. If you have visited the fake website and caused any loss, EOS Pacific will not be held responsible.<br/>If the main network of EOS fails to be opened successfully, resulting in a pledge or vote failure, EOS Pacific will not bear any responsibility.<br/>EOS Pacific is not responsible for any discrepancy in the official snapshot of EOS, including but not limited to the inability to import the account.<br/>Due to EOS. IO network problems, viruses, Trojans, malware attacks, network congestion, the instability of the system, system or equipment failure, communication failures, power failures, Banks and other reasons cause the failure of pledge or vote, EOS Pacific does not undertake any responsibility.<br/>If there are multiple main networks after the successful opening of the EOS host network, EOS Pacific will identify the most common EOS host network in the global community as the main EOS network. If you have any objection, you may not use the EOS Pacific voting system.<br/>If you change your voting information through other channels, resulting in failure to vote on EOS Pacific, EOS Pacific will not be held responsible.<br/>By voting block producers nodes may modify their account of the EOS, and this change will be Non-real-time, if during you vote, due to node block producer changed their vote and EOS account and failure, EOS Pacific does not undertake any responsibility.<br/>If the EOS constitution changes any information about voting, EOS Pacific will not be responsible for updating the information to you. EOS Pacific will implement this vote with the latest EOS constitution.<br/>If EOS. IO network main failure caused by any external force or the project is disbanded, including but not limited to earthquake, senior departures, hacking, EOS Pacific does not undertake any responsibility.<br/>Please be informed that EOS Pacific's vote is based on the principle of openness and justice. EOS Pacific will not ask for payment in any form, nor will it bribe you in any form.<br/>Unless expressly required by laws and regulations, EOS Pacific shall not have any duty to conduct preliminary review on information data, transaction activity and any other transaction related issues of all users.<br/>You know and agree that laws, regulations and policies in the field of Digital Assets are not yet soundly. EOS Pacific may be temporarily or permanently shut down because of the changes in laws, regulations and policies, if any losses are caused to you, EOS Pacific does not assume any responsibility.<br/>EOS Pacific will change not prior notice at any time, the content of the EOS Pacific has taken reasonable measures to ensure the accuracy of EOS Pacific information, but does not guarantee its accuracy degree, will not accept any because of EOS on Pacific information or failed to connect to the Internet, send or receive any delay or failure notification and information and the direct or indirect losses.<br/>You agree by EOS Pacific services provided by the subject to the Hong Kong special administrative region of the People's Republic of China and the user related laws and regulations of the host countries, when the service and the conflict, should be around the laws and regulations as the highest criterion. Any violation of local laws, regulations and regulations by EOS Pacific directly or indirectly shall be borne by the user."
+    },
+    "disclaimer_desc": [
+      "EOS Pacific reminds you that you must read carefully and thoroughly understand this statement before using EOS Pacific Service. You can choose not to use EOS Pacific Service, but if you use EOS Pacific Service, you will be regarded as an endorsement of all the contents of this statement.","You understand and agree that, to the extent permitted by law, EOS Pacific can only provide services according to the existing technical level and conditions.","EOS Pacific will not upload your private key to the network, EOS Pacific is not responsible for any loss of your private key.",
+      "Please confirm the exact domain name address of EOS Pacific（www.nodepacific.com）. If you have visited the fake website and caused any loss, EOS Pacific will not be held responsible.","If the main network of EOS fails to be opened successfully, resulting in a pledge or vote failure, EOS Pacific will not bear any responsibility.", "EOS Pacific is not responsible for any discrepancy in the official snapshot of EOS, including but not limited to the inability to import the account.", "Due to EOS. IO network problems, viruses, Trojans, malware attacks, network congestion, the instability of the system, system or equipment failure, communication failures, power failures, Banks and other reasons cause the failure of pledge or vote, EOS Pacific does not undertake any responsibility.", "If there are multiple main networks after the successful opening of the EOS host network, EOS Pacific will identify the most common EOS host network in the global community as the main EOS network. If you have any objection, you may not use the EOS Pacific voting system.", "If you change your voting information through other channels, resulting in failure to vote on EOS Pacific, EOS Pacific will not be held responsible.", "By voting block producers nodes may modify their account of the EOS, and this change will be Non-real-time, if during you vote, due to node block producer changed their vote and EOS account and failure, EOS Pacific does not undertake any responsibility.", "If the EOS constitution changes any information about voting, EOS Pacific will not be responsible for updating the information to you. EOS Pacific will implement this vote with the latest EOS constitution.", "If EOS. IO network main failure caused by any external force or the project is disbanded, including but not limited to earthquake, senior departures, hacking, EOS Pacific does not undertake any responsibility.", "Please be informed that EOS Pacific's vote is based on the principle of openness and justice. EOS Pacific will not ask for payment in any form, nor will it bribe you in any form.", "Unless expressly required by laws and regulations, EOS Pacific shall not have any duty to conduct preliminary review on information data, transaction activity and any other transaction related issues of all users.", "You know and agree that laws, regulations and policies in the field of Digital Assets are not yet soundly. EOS Pacific may be temporarily or permanently shut down because of the changes in laws, regulations and policies, if any losses are caused to you, EOS Pacific does not assume any responsibility.", "EOS Pacific will change not prior notice at any time, the content of the EOS Pacific has taken reasonable measures to ensure the accuracy of EOS Pacific information, but does not guarantee its accuracy degree, will not accept any because of EOS on Pacific information or failed to connect to the Internet, send or receive any delay or failure notification and information and the direct or indirect losses.", "You agree by EOS Pacific services provided by the subject to the Hong Kong special administrative region of the People's Republic of China and the user related laws and regulations of the host countries, when the service and the conflict, should be around the laws and regulations as the highest criterion. Any violation of local laws, regulations and regulations by EOS Pacific directly or indirectly shall be borne by the user."
+    ]
+  },
+  "zhCht": {
+    "title": ["主頁", "EOS Pacific"],
+    "importAccount": {
+      "title": "導入賬戶",
+      "keyDesc": "請輸入EOS賬戶名，如果您操作的是初始映射賬戶",
+      "clickInquireDesc": "點擊查詢初始映射賬戶名",
+      "keyPlaceholder": "請輸入私鑰",
+      "inquireAccount": "查詢賬戶名",
+      "inquireName": "初始賬戶名：",
+      "inquireDesc": "请输入该账户对应的EOS",
+      "accountNamePlaceholder": "請輸入賬戶名",
+      "importBtn": "導入賬戶",
+      "active_key": "EOS Active私鑰",
+      "private_worry": "，請不用擔心，您的私鑰僅用來對本次投票進行簽名，不會被上傳到網絡上。"
+    },
+    "mapping": {
+      "title": "查詢初始映射賬戶名",
+      "inquireBtn": "查詢",
+      "start_account": "查詢賬戶名：",
+      "confirmBtn": "確認",
+      "public_placeholder": "請輸入EOS公鑰"
+    },
+    "private_active": {
+      "title": "Active私鑰",
+      "desc": "EOS 默認本地賬戶分爲兩種角色：Owner 和 Active。<br/>Owner 擁有最高權限，可以管理 Active 和其他角色。<br/>Active 用于日常使用，比如轉賬、投票。<br/>單私鑰模式：Owner 和 Active 使用同一把私鑰。<br/>雙私鑰模式：Owner 和 Active 使用不同私鑰。<br/>如果您只有一把私鑰，那麽您默認使用的是單私鑰模式，請直接輸入私鑰導入賬戶即可。",
+      "know": "知道了"
+    },
+    "pledge": {
+      "title": "質押",
+      "total": "賬戶總額(EOS)：",
+      "pledgeAlready": "已質押(EOS)：",
+      "repayment": "回款中(EOS)：",
+      "totalTitle": "賬戶總額",
+      "totalDesc": "您賬戶中EOS總數量",
+      "pledgeAlreadyTitle": "已質押 ",
+      "pledgeAlreadyDesc": "您賬戶中已經質押的EOS數量，即您已獲得的票數",
+      "repaymentTitle": "回款中",
+      "repaymentDesc": "贖回中的EOS數量。您可通過調整質押數量申請贖回，申請贖回的EOS將在72小時後到賬。贖回中的EOS可以質押，但無法進行交易。",
+      "barDesc": "調整進度條可改變質押數量",
+      "pledgeBtn": "質押",
+      "konw_btn": "知道了",
+      "showNode": "如需展示您的節點，請提供節點信息給我們：eos.pacific@nodepacific.com",
+      "disclaimerTitle": "點擊查看《EOS Pacific投票系統免責聲明》"
+    },
+    "poll": {
+      "title": "投票",
+      "pollBtn": "投票",
+      "pollDesc": "如果您之前已經進行過投票，本次投票將追加到您之前的投票結果中"
+    },
+    "jump": {
+      "desc": ["我們EOS Pacific由亞洲領先的區塊鏈技術公司提供支持，總部位于香港。 我們正在推廣EOS技術和致力于成爲EOS區塊生産者。", "投票僅需3步就可以完成，我們在第一步中會要求您輸入您的賬戶名和EOS Active私鑰。如果您的賬戶是初始映射賬戶，我們提供了通過您的EOS公鑰查詢EOS賬戶名的功能。關于私鑰的安全性，請不用擔心，所有的交易都將在本台設備上完成，您的私鑰將不會保存或被上傳到網絡上。", "在導入賬戶後，第二步EOS.IO將要求您質押您的EOS以換取投票資格，並且只能質押整數倍的EOS。您可以隨時申請贖回質押的EOS，申請贖回的EOS將在72小時後到賬。贖回中的EOS可以質押，但無法進行交易。", "質押EOS後，第三步需要您投票給自己認可的超級節點。一個EOS通過質押後可以換取一票，一票最多可以同時投30個候選節點，每個候選節點不可重複投票。", "感謝您的投票！"],
+      "know": "了解EOS Pacific",
+      "jump_btn": "知道了",
+      "jump_icon": "../images/app_mobile/confirm-icon-hk.png"
+    },
+    "code": "EOS Pacific投票系統源碼已公開，點擊查看",
+    "disclaimer": "免責聲明",
+    "recommend": "推薦",
+    "import_account": "請先導入賬戶！",
+    "email_desc": "如需展示您的節點，請提供節點信息給我們：",
+    "tip": {
+      "tip1": "請輸入公鑰！",
+      "tip2": "查詢失敗，請重試！",
+      "tip3": "導入失敗，請重試！",
+      "tip4": "質押成功！",
+      "tip5": "取消質押成功！",
+      "tip6": "質押失敗！質押至少需要一個EOS！",
+      "tip7": "質押失敗，請重試！",
+      "tip8": "投票成功！",
+      "tip9": "投票成功25票，失敗5票！",
+      "tip10": "最多可投30票！",
+      "tip11": "投票失敗，請重試！",
+      "tip_tick": "票",
+      "tip_suc": "投票成功",
+      "tip_fail": "失敗"
+    },
+    "disclaimerConfirm": {
+      "title": "EOS Pacific投票系統免責聲明",
+      "intro": "EOS Pacific（以下稱“EOS Pacific或我們”）提醒您，在使用EOS Pacific前，請您務必仔細閱讀並透徹理解本聲明。您可以選擇不使用EOS Pacific，但如果您使用EOS Pacific，您的使用行爲將被視爲對本聲明全部內容的認可。<br/>您理解和同意，在法律所允許的範圍內，EOS Pacific只能按照現有的技術水平和條件提供服務。<br/>EOS Pacific不會將您的私鑰上傳到網絡上，如果您在其他地方操作了您的私鑰導致私鑰丟失，EOS Pacific不承擔任何責任。<br/>請認准EOS Pacific准確的域名地址www.nodepacific.com，如果您訪問了假冒的網址造成損失，EOS Pacific不承擔任何責任。<br/>如果EOS主網未能成功開啓，導致質押或投票失敗，EOS Pacific不承擔任何責任。<br/>因EOS官方快照存在出入産生的問題，包括但不限于無法導入賬戶，EOS Pacific不承擔任何責任。<br/>因EOS.IO網絡問題、病毒、木馬、惡意程序攻擊、網絡擁堵、系統不穩定、系統或設備故障、通訊故障、電力故障、銀行等原因導致的質押或投票失敗， EOS Pacific不承擔任何責任。<br/>如果EOS主網成功開啓後出現多個主網，EOS Pacific會認定全球社區共識最多的EOS主網爲EOS主網，如果您有異議，可以不使用EOS Pacific投票系統。<br/>如果您在其他渠道更改了您的投票信息，導致在EOS Pacific上投票失敗，EOS Pacific不承擔任何責任。<br/>由于被投票的區塊生産者節點可能會修改他們的EOS賬戶，而這個修改將會是非實時的，如果在您投票期間，由于塊生産者節點修改了他們的EOS賬戶而導致的投票失敗，EOS Pacific不承擔任何責任。<br/>如果EOS憲法有更改任何關于投票的信息，EOS Pacific不負責向您更新資訊，EOS Pacific將以EOS最新憲法來執行本次投票。<br/>如果EOS.IO網絡因任何外力導致主網失敗或項目解散，包括但不限于地震、高層離職、黑客事件，EOS Pacific不承擔任何責任。<br/>請您知悉，EOS Pacific的投票是基于公開公正原則的，EOS Pacific不會以任何形式向您索要報酬，也不會以任何形式對您進行賄選。<br/>除非法律法規明確要求，否則，EOS Pacific沒有義務對所有用戶的信息數據、數字資産信息、交易行爲以及與交易有關的其它事項進行事先審查<br/>您了解並同意，由于數字資産領域的法律法規、政策尚未健全，因法律法規、政策的變化，EOS Pacific平台可能因不符合法律法規、政策的規定或應政府要求而被暫時或永久關停，如因此給您造成任何損失的，EOS Pacific不承擔任何責任。<br/>EOS Pacific的內容會隨時更改並不作另行通知，EOS Pacific已采取合理措施確保EOS Pacific資訊的准確性，但並不保證其准確性程度，亦不會接受任何因爲EOS Pacific上的資訊或因未能連接互聯網、傳送或接收任何通知和信息時的延誤或失敗而直接或間接造成的損失。<br/>您同意通過EOS Pacific所提供的服務受制于中華人民共和國香港特別行政區及用戶所在國的相關法律法規和管理條例，當本服務與之發生衝突時，應以各地的法律法規和管理條例爲最高准則。任何通過EOS Pacific直接或間接違反當地法律法規和管理條例的行爲，該後果應由用戶承擔。"
+    },
+    "disclaimer_desc": [
+      "EOS Pacific（以下稱“EOS Pacific或我們”）提醒您，在使用EOS Pacific前，請您務必仔細閱讀並透徹理解本聲明。您可以選擇不使用EOS Pacific，但如果您使用EOS Pacific，您的使用行爲將被視爲對本聲明全部內容的認可。","您理解和同意，在法律所允許的範圍內，EOS Pacific只能按照現有的技術水平和條件提供服務。",
+      "EOS Pacific不會將您的私鑰上傳到網絡上，如果您在其他地方操作了您的私鑰導致私鑰丟失，EOS Pacific不承擔任何責任。","請認准EOS Pacific准確的域名地址www.nodepacific.com，如果您訪問了假冒的網址造成損失，EOS Pacific不承擔任何責任。", "如果EOS主網未能成功開啓，導致質押或投票失敗，EOS Pacific不承擔任何責任。", "因EOS官方快照存在出入産生的問題，包括但不限于無法導入賬戶，EOS Pacific不承擔任何責任。", "因EOS.IO網絡問題、病毒、木馬、惡意程序攻擊、網絡擁堵、系統不穩定、系統或設備故障、通訊故障、電力故障、銀行等原因導致的質押或投票失敗， EOS Pacific不承擔任何責任。", "如果EOS主網成功開啓後出現多個主網，EOS Pacific會認定全球社區共識最多的EOS主網爲EOS主網，如果您有異議，可以不使用EOS Pacific投票系統。", "如果您在其他渠道更改了您的投票信息，導致在EOS Pacific上投票失敗，EOS Pacific不承擔任何責任。", "由于被投票的區塊生産者節點可能會修改他們的EOS賬戶，而這個修改將會是非實時的，如果在您投票期間，由于塊生産者節點修改了他們的EOS賬戶而導致的投票失敗，EOS Pacific不承擔任何責任。", "如果EOS憲法有更改任何關于投票的信息，EOS Pacific不負責向您更新資訊，EOS Pacific將以EOS最新憲法來執行本次投票。", "如果EOS.IO網絡因任何外力導致主網失敗或項目解散，包括但不限于地震、高層離職、黑客事件，EOS Pacific不承擔任何責任。", "請您知悉，EOS Pacific的投票是基于公開公正原則的，EOS Pacific不會以任何形式向您索要報酬，也不會以任何形式對您進行賄選。", "除非法律法規明確要求，否則，EOS Pacific沒有義務對所有用戶的信息數據、數字資産信息、交易行爲以及與交易有關的其它事項進行事先審查。", "您了解並同意，由于數字資産領域的法律法規、政策尚未健全，因法律法規、政策的變化，EOS Pacific平台可能因不符合法律法規、政策的規定或應政府要求而被暫時或永久關停，如因此給您造成任何損失的，EOS Pacific不承擔任何責任。", "EOS Pacific的內容會隨時更改並不作另行通知，EOS Pacific已采取合理措施確保EOS Pacific資訊的准確性，但並不保證其准確性程度，亦不會接受任何因爲EOS Pacific上的資訊或因未能連接互聯網、傳送或接收任何通知和信息時的延誤或失敗而直接或間接造成的損失。", "您同意通過EOS Pacific所提供的服務受制于中華人民共和國香港特別行政區及用戶所在國的相關法律法規和管理條例，當本服務與之發生衝突時，應以各地的法律法規和管理條例爲最高准則。任何通過EOS Pacific直接或間接違反當地法律法規和管理條例的行爲，該後果應由用戶承擔。"
+    ]
+  }
+}

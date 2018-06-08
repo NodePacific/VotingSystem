@@ -1,0 +1,95 @@
+//out: ../css/public.min.css, compress: true, sourceMap: false
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Helvetica Neue", "Open sans", "Hiragino Sans GB", "Microsoft Yahei", "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1em 0 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+a {
+  color: #FFCC66;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+.hide{
+  display: none;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #CCA352;
+}
+p{
+  margin: 0;
+  padding: 0;
+}
+input[type=checkbox], input[type=radio]{
+  margin: 0;
+}
+ul,ol,li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.clearfix{
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+.confirm-tip{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  z-index: 12;
+  .confirm-tip__content{
+    width: 77%;
+    border-radius: 8px;
+    margin-left: 11.5%;
+    background-color: #fff;
+    min-height: 60px;
+  }
+}
+.tip-dl{
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  margin: 0 auto;
+  max-width: 96%;
+  .tip-dl__dt{
+    width: 20px;
+    float: left;
+    .tip-dl__dt--img{
+      width: 100%;
+      vertical-align: top;
+    }
+  }
+  .tip-dl__dd{
+    max-width: 94%;
+    font-size: 15px;
+    padding-left: 12px;
+    float: left;
+    color: #3B3D44;
+    line-height: 22px;
+  }
+}

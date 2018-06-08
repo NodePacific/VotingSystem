@@ -1,0 +1,182 @@
+{
+	"english": {
+		"title": ["Home", "EOS Pacific"],
+		"copyright": "© 2018 nodepacific tech All rights reserved",
+		"home": {
+			"first_title": "NodePacific Tech",
+			"second_title": "The Decentralized Symphony of EOS Power",
+			"three_title": "EOS Pacific / Asia-Pacific Access / Community /Solutions",
+			"desc": "NodePacific Tech is a leading blockchain company in Asia. Based in Hong Kong, we build both local and global communities for those who have interests in Asia-Pacific regions. We provide Asia-Pacific access and one-stop solutions for global developers. We are currently promoting EOS technology and working to be an EOS block producer candidate.",
+			"email_placeholder": "Email address",
+			"email_btn": "SIGN UP"
+		},
+		"pacific": {
+			"title": "EOS Pacific, to be an EOS Block Producer",
+			"desc": "EOS Pacific is the project we are building to be an EOS block producer candidate. Also we are developing EOS communities and would love to have both local and global EOS developers to join us."
+		},
+		"asian_access": {
+			"title": "Asia-Pacific Access",
+			"desc": "If you are a global developer and have a fantastic blockchain project, you cannot miss the fast-paced and dynamic Asia-Pacific regions. Do not worry about language and culture differences. We will help you open the door to Asia and seize this opportunity."
+		},
+		"community": {
+			"title": "Support the Blockchain Community",
+			"desc": "As a Hong Kong based organization, we will spend part of our revenues to build, promote and support local communities and those global communities who have strong interests in Asia-Pacific regions. We focus on building EOS communities. We would love to see more and more EOS developers join us and play the Symphony of EOS."
+		},
+		"solution": {
+			"title": "One-stop Solution",
+			"education_talent": {
+				"title": "Educations and Talents",
+				"desc": "We provide blockchain technology training services and track blockchain talents for global customers. EOS, as a very important emerging blockchain technology, is our major focus."
+			},
+			"technology": {
+				"title": "Technology solutions",
+				"desc": "Our services can help global customers develop blockchain solutions covering design, test environment, cloud server and implementations. Currently we are closely following the dynamic EOS technology development. Our EOS technology experts are ready for your consultations."
+			},
+			"incubation": {
+				"title": "Incubations",
+				"desc": "Sometimes it is difficult to put ideas into products. Not only can we help to build your ideas from scratch, but also to facilitate key steps from fundraising to marketing, media, and products. Our aim here is to turn developers’ ideas into reality."
+			}
+		},
+		"contact_us": {
+			"title": "Contact Us",
+			"name_placeholder": "Your name",
+			"email_placeholder": "Email address",
+			"message_placeholder": "Leave a message",
+			"contact_btn": "CONTACT US"
+		},
+		"confirm": {
+			"title": "prompt",
+			"subscription_desc": "Subscription successful!",
+			"btn": "ok",
+			"opinion_desc": "We have received your opinion. Thank you!",
+			"message_fail": "Message failed to send",
+			"eamil_error": "Wrong Email format",
+			"information_miss": "Please enter the complete information"
+		},
+		"select_change": {
+			"title": "Language selection",
+			"cancel": "Cancel",
+			"determine": "Done"
+		}    
+	},
+	"zh_chs": {
+		"title": ["主页", "EOS Pacific"],
+		"copyright": "© 2018 nodepacific tech 版权所有",
+		"home": {
+			"first_title": "节点亚太科技",
+			"second_title": "强大的EOS —— 演奏去中心化之新乐章",
+			"three_title": "EOS Pacific / 亚太通道 / 社区 / 解决方案",
+			"desc": "节点亚太（NodePacific Tech）是亚洲领先的区块链科技公司，总部设在香港。我们建立本地和全球社区，为所有对亚太地区感兴趣的开发者提供亚太通道和一站式解决方案。 目前我们正在推广EOS技术，并致力于成为EOS区块生产者候选人。",
+			"email_placeholder": "邮箱地址",
+			"email_btn": "订阅"
+		},
+		"pacific": {
+			"title": "EOS Pacific —— EOS区块的生产者",
+			"desc": "EOS Pacific是我们正在搭建的项目，籍此争取成为EOS区块生产者候选人。 节点亚太同时也开发EOS社区，吸引本地和全球的EOS开发人员加入我们。"
+		},
+		"asian_access": {
+			"title": "亚太通道",
+			"desc": "如果您是一位全球开发者，拥有绝妙的区块链项目，则千万不能错过充满活力的亚太地区。 您毋需担心语言和文化差异，我们将助您把握机会，打开通往亚太的大门。"
+		},
+		"community": {
+			"title": "支持区块链社区",
+			"desc": "作为一家基于香港的公司，节点亚太专注建立EOS社区。我们将使用部分收入建立、推动和支持本地社区以及对亚太地区抱有浓厚兴趣的全球社区。我们期待越来越多EOS开发者的加入，共谱EOS新篇章。"
+		},
+		"solution": {
+			"title": "一站式解决方案",
+			"education_talent": {
+				"title": "教育和人才",
+				"desc": "节点亚太提供区块链技术培训，并为全球客户追踪区块链人才。 EOS作为及其重要的新兴区块链技术，是我们关注的焦点。"
+			},
+			"technology": {
+				"title": "技术方案",
+				"desc": "节点亚太密切关注EOS技术的发展，并由团队顶级EOS技术专家为全球客户提供咨询。我们的服务能够为客户开发一整套涵盖从设计、测试环境、云服务器到落地的区块链解决方案。"
+			},
+			"incubation": {
+				"title": "孵化",
+				"desc": "从想法到产品的转化往往十分艰难。我们不但可以帮助您从零开始构建想法，还提供从融资到营销、媒体和产品转化的咨询。 我们的目标是将开发者的想法变成现实。"
+			}
+		},
+		"contact_us": {
+			"title": "联系我们",
+			"name_placeholder": "姓名",
+			"email_placeholder": "邮箱地址",
+			"message_placeholder": "留言",
+			"contact_btn": "联系我们"
+		},
+		"confirm": {
+			"title": "提示",
+			"subscription_desc": "订阅成功",
+			"btn": "确认",
+			"opinion_desc": "您的意见我们已经收到，谢谢！",
+			"message_fail": "您的消息发送失败",
+			"eamil_error": "输入的邮箱格式有误",
+			"information_miss": "请输入完整的信息"
+		},
+		"select_change": {
+			"title": "语言选择",
+			"cancel": "取消",
+			"determine": "确定"
+		}
+	},
+	"zh_cht": {
+		"title": ["主頁", "EOS Pacific"],
+		"copyright": "© 2018 nodepacific tech 版權所有",
+		"home": {
+			"first_title": "節點亞太科技",
+			"second_title": "強大的EOS —— 演奏去中心化之新樂章",
+			"three_title": "EOS Pacific / 亞太通道 / 社區 / 解決方案",
+			"desc": "節點亞太（NodePacific Tech）是亞洲領先的區塊鏈科技公司，總部設在香港。我們建立本地和全球社區，為所有對亞太地區感興趣的開發者提供亞太通道和壹站式解決方案。 目前我們正在推廣EOS技術，並致力於成為EOS區塊生產者候選人。",
+			"email_placeholder": "郵箱地址",
+			"email_btn": "訂閱"
+		},
+		"pacific": {
+			"title": "EOS Pacific —— EOS區塊的生產者",
+			"desc": "EOS Pacific是我們正在搭建的項目，籍此爭取成為EOS區塊生產者候選人。 節點亞太同時也開發EOS社區，吸引本地和全球的EOS開發人員加入我們。"
+		},
+		"asian_access": {
+			"title": "亞太通道",
+			"desc": "如果您是壹位全球開發者，擁有絕妙的區塊鏈項目，則千萬不能錯過充滿活力的亞太地區。 您毋需擔心語言和文化差異，我們將助您把握機會，打開通往亞太的大門。"
+		},
+		"community": {
+			"title": "支持區塊鏈社區",
+			"desc": "作為壹家基於香港的公司，節點亞太專註建立EOS社區。我們將使用部分收入建立、推動和支持本地社區以及對亞太地區抱有濃厚興趣的全球社區。我們期待越來越多EOS開發者的加入，共譜EOS新篇章。"
+		},
+		"solution": {
+			"title": "壹站式解決方案",
+			"education_talent": {
+				"title": "教育和人才",
+				"desc": "節點亞太提供區塊鏈技術培訓，並為全球客戶追蹤區塊鏈人才。 EOS作為及其重要的新興區塊鏈技術，是我們關註的焦點。"
+			},
+			"technology": {
+				"title": "技術方案",
+				"desc": "節點亞太密切關註EOS技術的發展，並由團隊頂級EOS技術專家為全球客戶提供咨詢。我們的服務能夠為客戶開發壹整套涵蓋從設計、測試環境、雲服務器到落地的區塊鏈解決方案。"
+			},
+			"incubation": {
+				"title": "孵化",
+				"desc": "從想法到產品的轉化往往十分艱難。我們不但可以幫助您從零開始構建想法，還提供從融資到營銷、媒體和產品轉化的咨詢。 我們的目標是將開發者的想法變成現實。"
+			}
+		},
+		"contact_us": {
+			"title": "聯系我們",
+			"name_placeholder": "姓名",
+			"email_placeholder": "郵箱地址",
+			"message_placeholder": "留言",
+			"contact_btn": "聯系我們"
+		},
+		"confirm": {
+			"title": "提示",
+			"subscription_desc": "訂閱成功",
+			"btn": "確認",
+			"opinion_desc": "您的意見我們已經收到，謝謝！",
+			"message_fail": "您的消息發送失敗",
+			"eamil_error": "輸入的郵箱格式有誤",
+			"information_miss": "請輸入完整的信息"
+		},
+		"select_change": {
+			"title": "語言選擇",
+			"cancel": "取消",
+			"determine": "確定"
+		}
+	}
+}

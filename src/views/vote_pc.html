@@ -4,22 +4,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
   <meta name="renderer" content="webkit">
-  <title>
-    NODE.pacific
-  </title>
-
+  <title>投票 EOS Pacific</title>
   <link rel="stylesheet" type="text/css" href="http://unpkg.com/iview/dist/styles/iview.css">
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/bootstrap-select.min.css" rel="stylesheet">
-  <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/rangeslider.css">
-  <link href="/css/welcome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/vote.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/rangeslider.css">
+  <link rel="stylesheet" href="../css/welcome.min.css">
+  <link rel="stylesheet" href="../css/vote.min.css">
   <style>
     .change-select{
-      background-image: url('/images/up.png');
+      background-image: url('../images/up.png');
     }
     .dropdown-toggle .caret{
       display: inline-block;
@@ -28,50 +25,57 @@
       width: 27px;
       margin-right: 8px;
     }
-    .import-account__name--desc .dropdown, .dropup{
+    .mapping-content__account .dropdown, .dropup{
       width: 224px;
     }
-    .import-account__name--desc .dropdown .dropdown-toggle{
-      width: 224px;
+    .mapping-content__account .dropdown .dropdown-toggle{
+      width: 100%;
       color: #DDB273;
       background-color: rgba(255,255,255,.1);
       border-radius: 0;
       border: 1px solid rgba(255,255,255,.1);
       text-align: left;
       display: block;
-      line-height: 39px;
-      height: 39px;
-      padding-left: 12px;
+      line-height: 48px;
+      height: 48px;
+      padding-left: 18px;
     }
-    .import-account__name--desc .dropdown-menu>li>a{
-      padding: 8px 20px 10px 29px;
+    .mapping-content__account .dropdown-menu>li>a{
+      padding: 8px 20px 10px 14px;
+      line-height: 22px;
       font-size: 14px;
-      color: rgba(255,255,255,.65);
+      color: rgba(63,75,100,.65);
     }
-    .import-account__name--desc .open>.dropdown-menu{
-      background-color: #5C5F71;
+    .mapping-content__account .open>.dropdown-menu{
+      background-color: #EAEDF5;
       width: 100%;
       max-height: 160px;
       overflow-y: auto;
-      color: rgba(255,255,255,.65);
+      color: #000;
     }
-    .import-account__name--desc .bootstrap-select.btn-group .dropdown-menu li.selected{
+    .mapping-content__account .bootstrap-select.btn-group .dropdown-menu li.selected{
       background-color: #1890FF;
     }
-    .import-account__name--desc .account-active{
-      color: #fff;
-    }
-    .import-account__name--desc .caret{
+    .mapping-content__account .dropdown-toggle .caret{
       float: right;
-      margin-top: 17px;
-      margin-right: 9px;
-      color: #fff;
+      margin-top: 20px;
+      margin-right: 23px;
+      color: #8E939F;
+      width:0px;
+      height:0px;
+      border:9px solid #8E939F;
+      border-top-color:#8E939F;
+      border-bottom-color:transparent;
+      border-right-color:transparent;
+      border-left-color:transparent;
+      display: none;
     }
-    .import-account__name--desc{
+    .mapping-content__account{
       display: inline-block;
     }
-    .import-account__name--desc .open>.dropdown-menu>li:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+    .mapping-content__account .open>.dropdown-menu>li:hover,.mapping-content__account .dropdown-menu>li>a:focus,.mapping-content__account .dropdown-menu>li>a:hover{
       background-color: #1890FF;
+      color: #fff;
     }
     .ivu-notice{
       top: 75px!important;
@@ -84,7 +88,10 @@
     }
     .ivu-notice-with-desc .ivu-notice-icon{
       font-size: 24px;
-      margin-top: 3px;
+      margin-top: 0px;
+    }
+    .ivu-notice-with-desc .ivu-notice-title{
+      margin-bottom: 3px;
     }
     .ivu-notice-notice{
       padding: 14px;
@@ -92,10 +99,18 @@
     .page-scroll{
       font-weight: bold;
     }
-  </style>
-  <style>
+    .mapping-content__account .dropdown-menu>.active>a,.mapping-content__account .dropdown-menu>.active>a:focus,.mapping-content__account .dropdown-menu>.active>a:hover{
+      background-color:#1890FF;
+      color: #fff;
+    }
+    .mapping-account-name{
+      color: #000;
+    }
+    .loading{
+      display: none;
+    }
     .change-select{
-      background-image: url('/images/up.png');
+      background-image: url('../images/up.png');
     }
     .dropdown-toggle .caret{
       display: inline-block;
@@ -108,12 +123,11 @@
     }
   </style>
   <!--[if lt IE 9]>
-    <script type="text/javascript" src="/js/html5shiv.js"></script>
-    <script type="text/javascript" src="/js/es5.shim.min.js"></script>
+    <script type="text/javascript" src="../js/html5shiv.js"></script>
+    <script type="text/javascript" src="../js/es5.shim.min.js"></script>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
-  
 </head>
 <body>
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -127,7 +141,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand page-scroll" href="#page-top">
-        <img class="navbar-brand__icon" src="/images/eos-logo.png" />
+        <img class="navbar-brand__icon" src="../images/eos-logo.png" />
       </a>
     </div>
 
@@ -144,18 +158,18 @@
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <span class="current-language"><img class="dropdown-menu__icon" src="/images/eng-icon.png"/>English</span>
+            <span class="current-language"><img class="dropdown-menu__icon" src="../images/eng-icon.png"/>English</span>
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
             <li class="dropdown-menu__li" data-language="english">
-              <a href="#english"><img class="dropdown-menu__icon" src="/images/eng-icon.png"/>English</a>
+              <a href="#english"><img class="dropdown-menu__icon" src="../images/eng-icon.png"/>English</a>
             </li>
             <li class="dropdown-menu__li" data-language="zh_chs">
-              <a href="#zh_chs"><img class="dropdown-menu__icon" src="/images/zh-icon.png"/>中文简体</a>
+              <a href="#zh_chs"><img class="dropdown-menu__icon" src="../images/zh-icon.png"/>中文简体</a>
             </li>
             <li class="dropdown-menu__li" data-language="zh_cht">
-              <a href="#zh_cht"><img class="dropdown-menu__icon" src="/images/zh-icon.png"/>中文繁體</a>
+              <a href="#zh_cht"><img class="dropdown-menu__icon" src="../images/zh-icon.png"/>中文繁體</a>
             </li>
           </ul>
         </li>
@@ -163,130 +177,175 @@
     </div>
   </div>
 </nav>
-
-
-
-<div class="body">
-    <section class="vote" id="vote-tip">
-    <div class="vote-content">
-            <div class="import-account">
-        <p class="import-account__title">导入账户</p>
-        <p class="import-account__key">请输入你的私钥，你的私钥将仅用来签名本次投票，并不会在网上保存</p>
-        <div class="import-account__inqure">
-          <div class="input-box">
-            <span class="input-box__line"></span>
-            <input class="input-box__detail private" value="" autocomplete="off" type="text" placeholder="请输入私钥" >
-          </div>
-          <button class="import-account__inqure--btn">查询账户名</button>
+<section class="vote" id="vote-tip">
+  <div class="vote-content">
+    <!-- 导入账户 -->
+    <div class="import-account">
+      <p class="import-account__title">导入账户</p>
+      <p class="import-account__key"><span class="account-eos">请输入EOS账户名，如果您操作的是初始映射账户</span><a class="import-account__key--map">点击查询初始映射账户名</a></p>
+      <div class="import-account__inqure">
+        <div class="input-box">
+          <span class="input-box__line"></span>
+          <input class="input-box__detail change-account" value="" autocomplete="off" type="text" placeholder="请输入账户名" >
         </div>
-        <p class="import-account__name"><span class="inqure-name">初始账户名：</span><span class="import-account__name--desc">-</span></p>
-        <p class="import-account__change">如果你有修改账户名，请输入你修改后的账户名，如果未修改账户名，请直接点击导入账户</p>
-        <div class="import-account__import">
-          <div class="input-box">
-            <span class="input-box__line"></span>
-            <input class="input-box__detail change-account" value="" autocomplete="off" type="text" placeholder="请输入修改后的账户名" >
-          </div>
-          <button class="import-account__import--btn" disabled="disabled">导入账户</button>
         </div>
-      </div> 
-
-            <div class="pledge">
-        <p class="pledge-title">质押</p>
-        <div class="pledge-content">
-          <div class="pledge-content__account">
-            <div class="pledge-content__account--asset">
-              <div class="pledge-content__account--asset--single">
-                <span class="pledge-content__account--asset--single--title account-balance">账户总额：</span>
-                <p class="pledge-content__account--asset--single--num"><span class="pledge-content__account--asset--single--num--unit balance-num">0</span></p>
-              </div>
-              <div class="pledge-content__account--asset--single">
-                <span class="pledge-content__account--asset--single--title pledge-already">已质押：</span>
-                <p class="pledge-content__account--asset--single--num"><span class="pledge-content__account--asset--single--num--unit pledge-num">0</span></p>
-              </div>
-              <div class="pledge-content__account--asset--single">
-                <span class="pledge-content__account--asset--single--title repayment">回款中：</span>
-                <p class="pledge-content__account--asset--single--num"><span class="pledge-content__account--asset--single--num--unit repayment-num">0</span></p>
-              </div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="pledge-content__account--desc">
-              <p class="pledge-content__account--desc--single balance-desc">账户总额：您账户中EOS币的总数量。</p>
-              <p class="pledge-content__account--desc--single pledge-desc">已质押：您账户中已经质押的EOS币数量，即您获得的投票权数量。</p>
-              <p class="pledge-content__account--desc--single payment-desc">回款中：正在等待赎回的EOS币数量，您可通过调整质押数量进行赎回，赎回中的EOS币需要等待72小时回款。</p>
-            </div>
-          </div>
-          <div class="pledge-content__bar">
-            <div class="pledge-content__bar--content">
-              <div class="range-content">
-                <p class="range-content__intro"><span class="range-content__intro--num">0</span>EOS</p>
-                <input class="range-content__bar" type="range" min="0" data-rangeslider>
-                <p class="range-content__desc"><img class="range-content__desc--icon" src="/images/app_mobile/import-tip-icon.png"/> <span class="range-desc">调整进度条可改变质押数量</span></p>
-                <button class="pledge-btn" disabled="disabled">质押</button>
-              </div>
-            </div>
-          </div>
+      <p class="import-account__change"><span class="private-account">请输入该账户对应的EOS </span><span class="import-account__change--private">Active私钥</span><span class="worry_private-desc"> ，请不用担心，您的私钥仅用来对本次投票进行签名，不会被上传到网络上</span></p>
+      <div class="import-account__import">
+        <div class="input-box">
+          <span class="input-box__line"></span>
+          <input class="input-box__detail private" value="" autocomplete="off" type="text" placeholder="请输入私钥" >
         </div>
       </div>
-
-      <div class="clearfix"></div>
-      <div class="poll">
-        <p class="poll-title">投票</p>
-        <div class="poll-content">
-          <div class="pledge-change">
-            <div class="pledge-change__single self_account" style="margin-top:0;margin-left:0;display:none;width:auto;">
-              <span class="pledge-change__single--inteo" style="width:auto;">EOS Pacific（建议）</span>
-              <input class="pledge-change__single--checked" type="checkbox" name="pledge" checked="checked" accountName="EOS Pacific"/>
-            </div>
-            <div class="clearfix"></div>
-            <div class="pledge-change__content">
-              <div class="list_box"></div>
-              <div class="clearfix"></div>
-              <div class="empty-vote">
-                <img class="empty-vote__icon" src="/images/vote-empty-icon.png"/>
-                <p class="empty-vote__desc">请先导入账户</p>
-              </div>
-              <div class="pledge-load"><span>加载中...</span></div>
-            </div>
-            <button class="poll-content__btn" disabled="disabled" style="display: none;">投票</button>
-          </div>
-        </div>
+      <div class="import-account__import">
+        <button class="import-account__import--btn" style="float:left;" disabled="disabled"><img class="loading" src="../images/app_mobile/load-icon.png" /><span class="import-account__import--btn--desc">导入账户</span></button>
       </div>
     </div> 
-  </section>
-  
 
-    <div class="confirm hide">
-    <div class="confirm-content">
-      <div class="confirm-content__desc">
-        <p class="confirm-content__desc--single">EOSPacific是亚洲领先的区块链科技公司，总部设在香港。目前我们正在推广EOS技术，并致力于成为EOS区块生产者候选人。</p>
-        <p class="confirm-content__desc--single">投票仅需3步就可以完成，我们在第一步中会需要您输入您的EOS私钥，请不用担心，所有的交易都将在本台设备上完成，您的私钥将不会被上传到网络上。</p>
-        <p class="confirm-content__desc--single">在导入账户后，第二步EOS.IO将要求您质押您的EOS币以换取投票资格，您可以在任何时候撤回您质押的EOS币，撤回需要72小时</p>
-        <p class="confirm-content__desc--single">感谢您的投票！</p>
-      </div>
-      <a class="confirm-content__source">在github上浏览EOSPacific投票公开源码</a>
-      <div class="confirm-content__jump">
-        <span class="confirm-content__jump-btn">跳过</span>
+    <!-- 质押 -->
+    <div class="pledge">
+      <p class="pledge-title">质押</p>
+      <div class="pledge-content">
+        <div class="pledge-content__account">
+          <div class="pledge-content__account--asset">
+            <div class="pledge-content__account--asset--single">
+              <span class="pledge-content__account--asset--single--title account-balance">账户总额：</span>
+              <p class="pledge-content__account--asset--single--num"><span class="pledge-content__account--asset--single--num--unit balance-num">0</span></p>
+            </div>
+            <div class="pledge-content__account--asset--single">
+              <span class="pledge-content__account--asset--single--title pledge-already">已质押：</span>
+              <p class="pledge-content__account--asset--single--num"><span class="pledge-content__account--asset--single--num--unit pledge-num">0</span></p>
+            </div>
+            <div class="pledge-content__account--asset--single">
+              <span class="pledge-content__account--asset--single--title repayment">回款中：</span>
+              <p class="pledge-content__account--asset--single--num"><span class="pledge-content__account--asset--single--num--unit repayment-num">0</span></p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="pledge-content__account--desc">
+            <p class="pledge-content__account--desc--single balance-desc">账户总额：您账户中EOS币的总数量。</p>
+            <p class="pledge-content__account--desc--single pledge-desc">已质押：您账户中已经质押的EOS币数量，即您获得的投票权数量。</p>
+            <p class="pledge-content__account--desc--single payment-desc">回款中：正在等待赎回的EOS币数量，您可通过调整质押数量进行赎回，赎回中的EOS币需要等待72小时回款。</p>
+          </div>
+        </div>
+        <div class="pledge-content__bar">
+          <div class="pledge-content__bar--content">
+            <div class="range-content">
+              <p class="range-content__intro"><span class="range-content__intro--num">0</span>EOS</p>
+              <input class="range-content__bar" type="range" min="0" max="0" step="1" value="0" data-rangeslider>
+              <p class="range-content__desc"><img class="range-content__desc--icon" src="../images/app_mobile/import-tip-icon.png"/> <span class="range-desc">调整进度条可改变质押数量</span></p>
+              <button class="pledge-btn" disabled="disabled"><img class="loading" src="../images/app_mobile/load-icon.png" /><span class="pledge-btn--desc">质押</span></button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <div class="clearfix"></div>
+    <div class="poll">
+      <p class="poll-title">投票</p>
+      <div class="poll-content">
+        <div class="pledge-change">
+          <div class="pledge-change__single self_account" style="margin-top:0;margin-left:0;display:none;width:auto;">
+            <span class="pledge-change__single--inteo" style="width:auto;">EOS Pacific（<span class="recommend-account">推荐</span>）</span>
+            <input class="pledge-change__single--checked" type="checkbox" name="pledge" checked="checked" accountName="EOS Pacific"/>
+          </div>
+          <div class="clearfix"></div>
+          <div class="pledge-change__content">
+            <div class="list_box"></div>
+            <div class="clearfix"></div>
+            <div class="empty-vote">
+              <img class="empty-vote__icon" src="../images/vote-empty-icon.png"/>
+              <p class="empty-vote__desc">请先导入账户</p>
+            </div>
+            <div class="pledge-load"><span>加载中...</span></div>
+          </div>
+          <button class="poll-content__btn" disabled="disabled" style="display: none;"><img class="loading" src="../images/app_mobile/load-icon.png" /><span class="poll-content__btn--desc">投票</span></button>
+          <p class="poll-content__append"><img class="poll-content__append--icon" src="../images/app_mobile/import-tip-icon.png"/><span class="poll-content__append--desc">如果您之前已经进行过投票，本次投票将追加到您之前的投票结果中</span></p>
+        </div>
+      </div>
+      <p class="poll-show">如需展示您的节点，请提供节点信息给我们：eos.pacific@nodepacific.com</p>
+      <p class="poll-disclaimer"><span class="poll-disclaimer__desc">点击查看《EOS Pacific投票系统免责声明》</span></p>
+    </div>
+  </div> 
+</section>
+
+
+<!-- 跳过弹窗 -->
+<div class="confirm" style="display: none;">
+  <div class="confirm-content">
+    <div class="confirm-content__desc">
+      <p class="confirm-content__desc--single">我们EOS Pacific由亚洲领先的区块链技术公司提供支持，总部位于香港。 我们正在推广EOS技术和致力于成为EOS区块生产者。</p>
+      <p class="confirm-content__desc--single">投票仅需3步就可以完成，我们在第一步中会需要您输入您的EOS私钥，请不用担心，所有的交易都将在本台设备上完成，您的私钥将不会保存或被上传到网络上。</p>
+      <p class="confirm-content__desc--single">在导入账户后，第二步EOS.IO将要求您质押您的EOS以换取投票资格，并且只能质押整数倍的EOS，您可以随时申请赎回质押的EOS，申请赎回的EOS将在72小时后到账，赎回中的EOS无法进行质押，到账后可以进行再次质押。</p>
+      <p class="confirm-content__desc--single">质押EOS后，第三步需要您投票给自己认可的超级节点。一个EOS通过质押后可以换取一票，一票最多可以同时投30个候选节点，每个候选节点不可重复投票。</p>
+      <p class="confirm-content__desc--single">感谢您的投票！</p>
+    </div>
+    <a class="confirm-content__source" href="https://github.com/NodePacific/VotingSystem.git">EOS Pacific投票源碼已公開，點擊查看</a>
+    <div class="confirm-content__jump">
+      <span class="confirm-content__jump-btn">知道了</span>
+    </div>
   </div>
-  
-  <script type="text/javascript" src="/js/jquery.js"></script>
-  <script src="/js/grayscale.js"></script>
-  <script src="/js/jquery.easing.min.js"></script> 
-  <script type="text/javascript" src="/js/vue.min.js"></script>
-  <script src="/js/bootstrap-select.min.js"></script>
-  <script type="text/javascript" src="/js/iview.min.js"></script>
-  <script src="/js/eos/require.js"></script>
-  <script src="/js/vote.js"></script>
+</div>
+
+<!-- 查询初始账户名 -->
+<div class="mapping">
+  <div class="mapping-content">
+    <img class="mapping-content__close" src="../images/close-icon.png">
+    <p class="mapping-content__title">查询初始映射账户名</p>
+    <div class="mapping-content__inquire">
+      <div class="public-key">
+        <input class="public-key__input" type="text" placeholder="请输入EOS公钥">
+      </div>
+      <button class="mapping-content__inquire--btn"><img class="loading" src="../images/app_mobile/load-icon.png" /><span class="mapping-content__inquire--btn--desc">查询</span></button>
+    </div>
+    <div class="mapping-content__account">
+      <span class="mapping-content__account--desc">初始账户名：</span>
+      <div class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" value="1">
+          <span class="mapping-account-name" data-account="0">--</span>
+          <span class="caret"></span>
+        </a>
+      </div>
+    </div>
+    <button class="mapping-content__confirm">确认</button>
+  </div>
+</div>
+
+<!-- private key confirm -->
+<div class="private-confirm">
+  <div class="private-confirm__content">
+    <img class="private-confirm__content--close" src="../images/close-icon.png">
+    <p class="private-confirm__content--title">Active私钥</p>
+    <div class="private-confirm__content--desc">
+      EOS 默认本地账户分为两种角色：Owner 和 Active。<br/>
+      Owner 拥有最高权限，可以管理 Active 和其他角色。<br/>
+      Active 用于日常使用，比如转账、投票。<br/>
+      单私钥模式：Owner 和 Active 使用同一把私钥。<br/>
+      双私钥模式：Owner 和 Active 使用不同私钥。<br/>
+      如果您只有一把私钥，那么您默认使用的是单私钥模式，请直接输入私钥导入账户即可。
+    </div>
+    <button class="private-confirm__content--btn">知道了</button>
+  </div>
+</div>
+
+<!-- 免责声明弹窗 -->
+<div class="disclaimer-confirm">
+  <div class="disclaimer-confirm__content">
+    <p class="disclaimer-confirm__content--title">EOS Pacific投票系统免责声明</p>
+    <div class="disclaimer-confirm__content--intro"></div>
+    <div class="disclaimer-confirm__content--footer">
+      <button class="disclaimer-confirm__content--footer--know">知道了</button>
+    </div>
+  </div>
 </div>
 
 <section class="footer container">
   <div class="footer-content">
-    <img class="footer-content__icon" src="/images/eos-logo-footer.png" >
+    <img class="footer-content__icon" src="../images/eos-logo-footer.png" >
     <span class="footer-content__copyright">© 2018 nodepacific tech All rights reserved</span>
     <div class="footer-language">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="showLanguage">
-        <span class="current-language" id="languageId"><img class="dropdown-menu__icon" src="/images/eng-icon.png"/>English</span>
+        <span class="current-language" id="languageId"><img class="dropdown-menu__icon" src="../images/eng-icon.png"/>English</span>
         <span class="caret hide"></span>
       </a>
     </div>
@@ -299,16 +358,12 @@
 </section>
 
 
-<!-- Scripts -->
-<!-- js private -->
-<!-- <script src="/js/bootstrap-multiselect.js"></script>
-<script>
-  $('#example-single-selected').multiselect();
-</script> -->
-<script type="text/javascript" src="/js/jquery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.easing.min.js"></script>
+<script src="../js/eos/require.js"></script>
+<script src="../js/vote.js"></script>
 
-<script src="/js/jquery.easing.min.js"></script>
 <script>
   if ($(window).width() < 640) {
   $('.footer-content__copyright').hide();
@@ -348,9 +403,6 @@ showBankDom.addEventListener('click', function () {//监听事件
   $('.iosselect-header a.close').html(select_change.cancel);
 });
 </script>
-<!-- js public -->
-
-
 <!--[if lte IE 8]>
   <script type="text/javascript">
     var not_suggest_browser = $.cookie('not_suggest_browser');

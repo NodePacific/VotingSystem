@@ -53,6 +53,7 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
             return Promise.resolve({ code: -1, msg: err instanceof Error ? err.message : 'unknown error' });
         }
     }
+    var MAX_VOTE_COUNT = 30;
     var EosVoteSdk = /** @class */ (function () {
         function EosVoteSdk(params) {
             this._clientDefaultParams = null;
@@ -82,7 +83,7 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
                 expireInSeconds: defaultExpireInSeconds,
                 chainId: chainId,
             };
-            var ret = eosjs.Testnet(clientOpts);
+            var ret = eosjs(clientOpts);
             if (secretKey == null) {
                 this._unsignClient = ret;
             }
@@ -111,6 +112,17 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
                     }
                 });
             });
+        };
+        EosVoteSdk.prototype.version = function () {
+            var _this = this;
+            var provider = function () { return __awaiter(_this, void 0, void 0, function () {
+                return __generator(this, function (_a) {
+                    return [2 /*return*/, {
+                            version: '0.9.1'
+                        }];
+                });
+            }); };
+            return forwardResponseSafe(provider);
         };
         EosVoteSdk.prototype.isValidSecretKey = function (params) {
             var _this = this;
@@ -158,27 +170,59 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
             }); };
             return forwardResponseSafe(provider);
         };
-        EosVoteSdk.prototype.checkAccountExist = function (params) {
+        EosVoteSdk.prototype.checkAccountValid = function (params) {
             var _this = this;
+            params = params || {};
+            var accountName = params['accountName'] || '';
+            var secretKey = params['secretKey'] || '';
+            if (accountName.length == 0) {
+                throw Error('accountName must not be empty');
+            }
+            if (secretKey.length == 0) {
+                throw Error('secretKey must not be empty');
+            }
             var provider = function () { return __awaiter(_this, void 0, void 0, function () {
-                var accountName, client, resp, accountExisted;
+                var _this = this;
+                var resp, accountExisted, accountMatch;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
-                        case 0:
-                            params = params || {};
-                            accountName = params['accountName'] || '';
-                            if (accountName.length == 0) {
-                                throw Error('accountName must not be empty');
-                            }
-                            client = this.createClient();
-                            return [4 /*yield*/, client.getAccount({
-                                    account_name: accountName
-                                }).catch(function (err) { return null; })];
+                        case 0: return [4 /*yield*/, (function () { return __awaiter(_this, void 0, void 0, function () {
+                                var client, ret;
+                                return __generator(this, function (_a) {
+                                    switch (_a.label) {
+                                        case 0:
+                                            client = this.createClient();
+                                            return [4 /*yield*/, client.getAccount({
+                                                    account_name: accountName
+                                                }).catch(function (err) { })];
+                                        case 1:
+                                            ret = _a.sent();
+                                            return [2 /*return*/, ret || {}];
+                                    }
+                                });
+                            }); })()];
                         case 1:
                             resp = _a.sent();
-                            accountExisted = resp != null;
+                            accountExisted = (function () {
+                                var respAccountName = resp['account_name'] || '';
+                                return respAccountName == accountName;
+                            })();
+                            accountMatch = (function () {
+                                var permissions = (resp['permissions'] || [])
+                                    .filter(function (it) { return ['active', 'owner'].indexOf(it['perm_name']) >= 0; });
+                                var keys = permissions
+                                    .map(function (it) { return it['required_auth'] || {}; })
+                                    .map(function (it) { return it['keys'] || []; })
+                                    .reduce(function (pv, cv) { return pv.concat(cv); }, [])
+                                    .map(function (it) { return it['key'] || null; })
+                                    .filter(function (it) { return it != null; });
+                                var sk = params['secretKey'] || '';
+                                var pk = eosjs.modules.ecc.privateToPublic(sk);
+                                return keys.indexOf(pk) >= 0;
+                            })();
                             return [2 /*return*/, {
-                                    account_existed: accountExisted
+                                    account_existed: accountExisted,
+                                    account_match: accountMatch,
                                 }];
                     }
                 });
@@ -225,19 +269,42 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
             var _this = this;
             var provider = function () { return __awaiter(_this, void 0, void 0, function () {
                 var _this = this;
-                var accountName, candidateProvider, votedCandidateAccountProvider, candidates, has_next, votedCandidateAccounts, accounts, ret;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
+                var accountName, pageIndex, pageSize, candidateProvider, votedCandidateAccountProvider, _a, candidates, hasNext, votedCandidateAccounts, accounts, items;
+                return __generator(this, function (_b) {
+                    switch (_b.label) {
                         case 0:
                             params = params || {};
                             accountName = params['accountName'] || '';
+                            pageIndex = params['pageIndex'] || null;
+                            pageSize = params['pageSize'] || null;
                             if (accountName.length == 0) {
                                 throw Error('accountName must not be empty');
                             }
-                            candidateProvider = function () {
-                                var path = '/vote/candidates';
-                                return _this.doGet(path, params);
-                            };
+                            if (pageIndex == null || pageIndex <= 0) {
+                                throw Error('pageIndex must gt 0');
+                            }
+                            if (pageSize == null || pageSize <= 0) {
+                                throw Error('pageSize must gt 0');
+                            }
+                            candidateProvider = function () { return __awaiter(_this, void 0, void 0, function () {
+                                var path, resp, data, candidates, hasNext;
+                                return __generator(this, function (_a) {
+                                    switch (_a.label) {
+                                        case 0:
+                                            path = '/vote/candidates';
+                                            return [4 /*yield*/, this.doGet(path, {
+                                                    p: pageIndex,
+                                                    n: pageSize,
+                                                })];
+                                        case 1:
+                                            resp = _a.sent();
+                                            data = resp['data'] || {};
+                                            candidates = data['candidates'];
+                                            hasNext = data['has_next'];
+                                            return [2 /*return*/, [candidates, hasNext]];
+                                    }
+                                });
+                            }); };
                             votedCandidateAccountProvider = function () { return __awaiter(_this, void 0, void 0, function () {
                                 var client, info, voterInfo, producers;
                                 return __generator(this, function (_a) {
@@ -257,45 +324,33 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
                             }); };
                             return [4 /*yield*/, candidateProvider()];
                         case 1:
-                            var data = (_a.sent())['data'];
-
-                            has_next = data['has_next'];
-                            candidates = data['candidates']
-                                .map(function (it) {
-                                it['account_name'] = it['account_name'].replace(/\s/g, '');
-                                return it;
-                            })
-                                .filter(function (it) {
-                                return it['account_name'].length > 0;
-                            });
+                            _a = _b.sent(), candidates = _a[0], hasNext = _a[1];
                             return [4 /*yield*/, votedCandidateAccountProvider()];
                         case 2:
-                            votedCandidateAccounts = (_a.sent())
+                            votedCandidateAccounts = (_b.sent())
                                 .map(function (it) { return it.replace(/\s/g, ''); })
                                 .filter(function (it) { return it.length > 0; });
                             accounts = candidates
                                 .map(function (it) { return it['account_name']; })
                                 .concat(votedCandidateAccounts);
                             accounts = accounts.filter(function (it, idx) { return accounts.indexOf(it) == idx; });
-                            var data;
-                            data = accounts
-                                .map(function (account) {
-                                var relativeCandidate = candidates.find(function (it) { return it['account_name'] == account; });
-                                var external = relativeCandidate == null;
-                                var isVoted = votedCandidateAccounts.indexOf(account) >= 0;
-                                var displayName = relativeCandidate != null ? relativeCandidate['display_name'] : account;
+                            items = candidates
+                                .map(function (candidate) {
+                                var accountName = candidate['account_name'];
+                                var isVoted = votedCandidateAccounts.indexOf(accountName) >= 0;
+                                var displayName = candidate['display_name'];
                                 return {
-                                    external: external,
                                     isVoted: isVoted,
-                                    accountName: account,
+                                    accountName: candidate,
                                     displayName: displayName,
                                 };
                             });
-                            ret = {
-                                'has_next': has_next,
-                                'candidates': data
-                            };
-                            return [2 /*return*/, ret];
+                            return [2 /*return*/, {
+                                    candidates: items,
+                                    has_next: hasNext,
+                                    page_index: pageIndex,
+                                    page_size: pageSize,
+                                }];
                     }
                 });
             }); };
@@ -305,7 +360,7 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
             var _this = this;
             var provider = function () { return __awaiter(_this, void 0, void 0, function () {
                 var _this = this;
-                var accountName, client, balance, info;
+                var accountName, client, balance, unstakingToken, stakedToken;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -313,7 +368,7 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
                             accountName = params['accountName'] || 'unknown account';
                             client = this.createClient();
                             return [4 /*yield*/, (function () { return __awaiter(_this, void 0, void 0, function () {
-                                    var ret;
+                                    var cursor, rows, balance;
                                     return __generator(this, function (_a) {
                                         switch (_a.label) {
                                             case 0: return [4 /*yield*/, client.getTableRows({
@@ -323,19 +378,52 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
                                                     json: true,
                                                 })];
                                             case 1:
-                                                ret = _a.sent();
-                                                ret = ret.rows
+                                                cursor = _a.sent();
+                                                rows = cursor.rows
                                                     .map(function (it) { return it.balance; })
                                                     .filter(function (it) { return /\s+EOS$/g.test(it); });
-                                                ret = (ret[0] || '0.0000').replace(/\s|EOS$/g, '');
-                                                return [2 /*return*/, ret];
+                                                balance = (rows[0] || '0.0000').replace(/\s|EOS$/g, '');
+                                                return [2 /*return*/, balance];
                                         }
                                     });
                                 }); })()];
                         case 1:
                             balance = _a.sent();
                             return [4 /*yield*/, (function () { return __awaiter(_this, void 0, void 0, function () {
-                                    var info, delegatedBandwidth, voterInfo, stakedOfNet, stakedOfCpu, unstaking;
+                                    var cursor, net_amounts, cpu_amounts, unstakingOfNet, unstakingOfCpu;
+                                    return __generator(this, function (_a) {
+                                        switch (_a.label) {
+                                            case 0: return [4 /*yield*/, client.getTableRows({
+                                                    scope: accountName,
+                                                    code: 'eosio',
+                                                    table: 'refunds',
+                                                    json: true,
+                                                })];
+                                            case 1:
+                                                cursor = _a.sent();
+                                                net_amounts = cursor.rows
+                                                    .map(function (it) { return it['net_amount'] || '0.0000 EOS'; })
+                                                    .filter(function (it) { return /\s+EOS$/g.test(it); });
+                                                cpu_amounts = cursor.rows
+                                                    .map(function (it) { return it['cpu_amount'] || '0.0000 EOS'; })
+                                                    .filter(function (it) { return /\s+EOS$/g.test(it); });
+                                                unstakingOfNet = net_amounts
+                                                    .map(function (it) { return it.replace('\sEOS', ''); })
+                                                    .reduce(function (pv, cv) { return pv + Number.parseFloat(cv); }, 0);
+                                                unstakingOfCpu = cpu_amounts
+                                                    .map(function (it) { return it.replace('\sEOS', ''); })
+                                                    .reduce(function (pv, cv) { return pv + Number.parseFloat(cv); }, 0);
+                                                return [2 /*return*/, {
+                                                        unstaking_of_net: unstakingOfNet.toFixed(4),
+                                                        unstaking_of_cpu: unstakingOfCpu.toFixed(4),
+                                                    }];
+                                        }
+                                    });
+                                }); })()];
+                        case 2:
+                            unstakingToken = _a.sent();
+                            return [4 /*yield*/, (function () { return __awaiter(_this, void 0, void 0, function () {
+                                    var info, delegatedBandwidth, voterInfo, stakedOfNet, stakedOfCpu;
                                     return __generator(this, function (_a) {
                                         switch (_a.label) {
                                             case 0: return [4 /*yield*/, client.getAccount({ account_name: accountName })];
@@ -345,18 +433,16 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
                                                 voterInfo = info['voter_info'] || {};
                                                 stakedOfNet = (delegatedBandwidth['net_weight'] || '0.0000').replace(/\s|EOS/g, '');
                                                 stakedOfCpu = (delegatedBandwidth['cpu_weight'] || '0.0000').replace(/\s|EOS/g, '');
-                                                unstaking = (voterInfo['unstaking'] || '0.0000').replace(/\s|EOS/g, '');
                                                 return [2 /*return*/, {
                                                         staked_of_cpu: stakedOfCpu,
                                                         staked_of_net: stakedOfNet,
-                                                        unstaking: unstaking,
                                                     }];
                                         }
                                     });
                                 }); })()];
-                        case 2:
-                            info = _a.sent();
-                            return [2 /*return*/, Object.assign({}, info, { account_name: accountName, balance: balance })];
+                        case 3:
+                            stakedToken = _a.sent();
+                            return [2 /*return*/, Object.assign({}, stakedToken, unstakingToken, { account_name: accountName, balance: balance })];
                     }
                 });
             }); };
@@ -481,7 +567,8 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
         EosVoteSdk.prototype.vote = function (params) {
             var _this = this;
             var provider = function () { return __awaiter(_this, void 0, void 0, function () {
-                var accountName, broadcast, secretKey, candidates, client;
+                var _this = this;
+                var accountName, broadcast, secretKey, candidates, mode, client, candidatesNew, votedCandidateAccountProvider, candidatesOld, candidatesNewDuplicated_1, candidatesNew_1, success_count, failure_count;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -490,15 +577,21 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
                             broadcast = params['broadcast'] || false;
                             secretKey = params['secretKey'] || '';
                             candidates = params['candidates'] || [];
+                            mode = params['mode'] || 'replace';
                             if (accountName.length == 0) {
                                 throw Error('accountName must not be empty');
                             }
                             if (secretKey.length == 0) {
                                 throw Error('secretKey must not be empty');
                             }
+                            if (['append', 'replace'].indexOf(mode) < 0) {
+                                throw Error('mode must one of ["replace", "append"]');
+                            }
                             return [4 /*yield*/, this.createClient({ secretKey: secretKey })];
                         case 1:
                             client = _a.sent();
+                            if (!(mode == 'replace')) return [3 /*break*/, 3];
+                            candidatesNew = candidates;
                             return [4 /*yield*/, client.transaction(function (tx) {
                                     tx.voteproducer({
                                         voter: accountName,
@@ -508,7 +601,55 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
                                 }, { broadcast: broadcast })];
                         case 2:
                             _a.sent();
-                            return [2 /*return*/, null];
+                            return [2 /*return*/, {
+                                    success_count: candidates.length,
+                                    failure_count: 0,
+                                }];
+                        case 3:
+                            if (!(mode == 'append')) return [3 /*break*/, 6];
+                            votedCandidateAccountProvider = function () { return __awaiter(_this, void 0, void 0, function () {
+                                var client, info, voterInfo, producers;
+                                return __generator(this, function (_a) {
+                                    switch (_a.label) {
+                                        case 0:
+                                            client = this.createClient();
+                                            return [4 /*yield*/, client.getAccount({
+                                                    account_name: accountName
+                                                })];
+                                        case 1:
+                                            info = _a.sent();
+                                            voterInfo = info['voter_info'] || {};
+                                            producers = voterInfo['producers'] || [];
+                                            return [2 /*return*/, producers];
+                                    }
+                                });
+                            }); };
+                            return [4 /*yield*/, votedCandidateAccountProvider()];
+                        case 4:
+                            candidatesOld = _a.sent();
+                            candidatesNewDuplicated_1 = candidatesOld.concat(candidates);
+                            candidatesNew_1 = candidatesNewDuplicated_1
+                                .filter(function (it, idx) { return candidatesNewDuplicated_1.indexOf(it) == idx; })
+                                .filter(function (it, idx) {
+                                return idx < MAX_VOTE_COUNT;
+                            })
+                                .sort();
+                            return [4 /*yield*/, client.transaction(function (tx) {
+                                    tx.voteproducer({
+                                        voter: accountName,
+                                        proxy: '',
+                                        producers: candidatesNew_1
+                                    });
+                                }, { broadcast: broadcast })];
+                        case 5:
+                            _a.sent();
+                            success_count = Math.max(candidatesNew_1.length - candidatesOld.length, 0);
+                            failure_count = Math.max(candidates.length - success_count, 0);
+                            return [2 /*return*/, {
+                                    success_count: success_count,
+                                    failure_count: failure_count,
+                                }];
+                        case 6: return [2 /*return*/];
                     }
                 });
             }); };
