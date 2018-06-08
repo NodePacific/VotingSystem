@@ -1,0 +1,29 @@
+{
+  "presets": [
+    ["env", {
+      "loose": false,
+      "modules": "commonjs",
+      "spec": true,
+      "targets": {
+        "browsers": [
+          "> 1%",
+          "Explorer >= 9"
+        ]
+      },
+      "useBuiltIns": false,
+      "debug": false
+    }]
+  ],
+  "plugins": [
+    "dynamic-import-node",
+    "transform-class-properties",
+    "transform-es5-property-mutators",
+    "transform-export-extensions",
+    "transform-object-rest-spread",
+    ["transform-runtime", {
+      "helpers": false,
+      "polyfill": false,
+      "regenerator": false
+    }]
+  ]
+}
