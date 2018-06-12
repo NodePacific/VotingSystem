@@ -273,7 +273,7 @@ body, html{
           width: 16px;
           height: 16px;
           position: absolute;
-          background-image: url('../../images/app_mobile/pledge-icon.png');
+          background-image: url('/images/app_mobile/pledge-icon.png');
           background-repeat: no-repeat;
           background-size: contain;
           left: 0;
@@ -288,7 +288,7 @@ body, html{
           width: 16px;
           height: 16px;
           position: absolute;
-          background-image: url('../../images/app_mobile/account-total.png');
+          background-image: url('/images/app_mobile/account-total.png');
           background-repeat: no-repeat;
           background-size: contain;
           left: 0;
@@ -303,7 +303,7 @@ body, html{
           width: 16px;
           height: 16px;
           position: absolute;
-          background-image: url('../../images/app_mobile/pledge-icon.png');
+          background-image: url('/images/app_mobile/pledge-icon.png');
           background-repeat: no-repeat;
           background-size: contain;
           left: 0;
@@ -313,7 +313,7 @@ body, html{
       .question-icon{
         width: 13px;
         height: 13px;
-        background-image: url('../../images/app_mobile/question-mark.png');
+        background-image: url('/images/app_mobile/question-mark.png');
         background-repeat: no-repeat;
         background-size: cover;
         float: left;
@@ -434,7 +434,7 @@ body, html{
   &::before{
     content: '';
     display: block;
-    background-image: url('../../images/app_mobile/desc-icon.png');
+    background-image: url('/images/app_mobile/desc-icon.png');
     width: 3px;
     height: 33px;
     background-repeat: no-repeat;
@@ -535,11 +535,11 @@ body, html{
     -webkit-appearance: none;
     outline: none!important;
     border: none;
-    background-image: url('../../images/app_mobile/unchange-icon.png');
+    background-image: url('/images/app_mobile/unchange-icon.png');
     background-repeat: no-repeat;
     background-size: cover;
     &:checked{
-      background-image: url('../../images/app_mobile/success-icon.png');
+      background-image: url('/images/app_mobile/success-icon.png');
     }
   }
 }
@@ -610,7 +610,7 @@ body, html{
     &::before{
       content: '';
       display: block;
-      background-image: url('../../images/app_mobile/load-icon.png');
+      background-image: url('/images/app_mobile/load-icon.png');
       animation: loading 1s infinite linear;
       width: 19px;
       height: 19px;
@@ -700,7 +700,7 @@ body, html{
     &::before{
       content: '';
       display: block;
-      background-image: url('../../images/app_mobile/desc-icon.png');
+      background-image: url('/images/app_mobile/desc-icon.png');
       width: 3px;
       height: 33px;
       background-repeat: no-repeat;
@@ -813,7 +813,7 @@ body, html{
   &::before{
     content: '';
     display: block;
-    background-image: url('../../images/app_mobile/desc-icon.png');
+    background-image: url('/images/app_mobile/desc-icon.png');
     width: 3px;
     height: 33px;
     background-repeat: no-repeat;
@@ -942,6 +942,35 @@ body, html{
       left: 50%;
       margin-left: -45px;
       text-align: center;
+    }
+  }
+}
+.loading-confirm{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #161A34;
+  z-index: 1000;
+  .loading-confirm__content{
+    width: 50%;
+    position: absolute;
+    height: 62px;
+    top: 50%;
+    margin-top: -31px;
+    left: 50%;
+    margin-left: -25%;
+    text-align: center;
+    .loading-confirm__content--icon{
+      width: 40px;
+      animation: loading 1s infinite linear;
+    }
+    .loading-confirm__content--desc{
+      font-size: 14px;
+      color: #989BA9;
+      line-height: 20px;
+      margin-top: 3px;
     }
   }
 }

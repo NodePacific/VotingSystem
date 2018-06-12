@@ -1,6 +1,6 @@
 {
   "zhChs": {
-    "title": ["主页", "EOS Pacific"],
+    "title": ["主页", "EOS 投票"],
     "importAccount": {
       "title": "导入账户",
       "keyDesc": "请输入EOS账户名，如果您操作的是初始映射账户",
@@ -52,7 +52,7 @@
       "desc": ["我们EOS Pacific由亚洲领先的区块链技术公司提供支持，总部位于香港。 我们正在推广EOS技术和致力于成为EOS区块生产者。", "投票仅需3步就可以完成，我们在第一步中会要求您输入您的账户名和EOS Active私钥。如果您的账户是初始映射账户，我们提供了通过您的EOS公钥查询EOS账户名的功能。关于私钥的安全性，请不用担心，所有的交易都将在本台设备上完成，您的私钥将不会保存或被上传到网络上。", "在导入账户后，第二步EOS.IO将要求您质押您的EOS以换取投票资格，并且只能质押整数倍的EOS。您可以随时申请赎回质押的EOS，申请赎回的EOS将在72小时后到账。赎回中的EOS可以质押，但无法进行交易。", "质押EOS后，第三步需要您投票给自己认可的超级节点。一个EOS通过质押后可以换取一票，一票最多可以同时投30个候选节点，每个候选节点不可重复投票。", "感谢您的投票！"],
       "know": "了解EOS Pacific",
       "jump_btn": "知道了",
-      "jump_icon": "../images/app_mobile/confirm-icon.png"
+      "jump_icon": "/images/app_mobile/confirm-icon.png"
     },
     "code": "EOS Pacific投票系统源码已公开，点击查看",
     "disclaimer": "免责声明",
@@ -85,11 +85,11 @@
     ]
   },
   "english": {
-    "title": ["Home", "EOS Pacific"],
+    "title": ["Home", "EOS Vote"],
     "importAccount": {
       "title": "Import account",
       "keyDesc": "Please input your EOS account name, if you are working with the initial mapping account.",
-      "clickInquireDesc": "Check the initial mapping account name, click here",
+      "clickInquireDesc": "To query the initial mapping account name click here",
       "keyPlaceholder": "Active Private Key",
       "inquireAccount": "check account", 
       "inquireName": "Initial account name：",
@@ -137,7 +137,7 @@
       "desc": ["We, EOS Pacific, powered by an Asian leading blockchain technology company, is based in Hong Kong. We are promoting EOS technology and dedicated to be the EOS Block Producer candidate.", "Voting takes only 3 steps, and in the first step we ask you to input your account name and the EOS Active Private Key. If your account is an initial mapping account, we provide the ability to query the EOS account name through your EOS Public Key. Regarding the security of the Private Key, please do not worry, all transactions will be completed on this device, and your Private Key will not be saved or uploaded to the network.", "In the step 2, after your account being imported, EOS.IO would require EOS as stake pledge for the voting rights, and the stake pledge must be an integral multiple of single EOS. You can apply for redemption of the pledged EOS at any time, and the EOS that is applied for redemption will be refunded after 72 hours. The redemption of EOS can be pledged, but it cannot be traded.", "After EOS being used as stake pledge, In the step 3, you would have right to vote for the Block Producer by your own choice. Each pledged EOS can be exchanged intoone vote and you can select up to 30 Block Producer candidates using one vote. No repeated voting for the same candidate is allowed for each vote.", "Thanks for voting EOS Pacific!"],
       "know": "Learn about EOS Pacific",
       "jump_btn": "understand",
-      "jump_icon": "../images/app_mobile/confirm-icon-en.png"
+      "jump_icon": "/images/app_mobile/confirm-icon-en.png"
     },
     "code": "Check out the EOS Pacific Voting Open Source code, click here",
     "disclaimer": "DECLARATION",
@@ -170,7 +170,7 @@
     ]
   },
   "zhCht": {
-    "title": ["主頁", "EOS Pacific"],
+    "title": ["主頁", "EOS 投票"],
     "importAccount": {
       "title": "導入賬戶",
       "keyDesc": "請輸入EOS賬戶名，如果您操作的是初始映射賬戶",
@@ -222,7 +222,7 @@
       "desc": ["我們EOS Pacific由亞洲領先的區塊鏈技術公司提供支持，總部位于香港。 我們正在推廣EOS技術和致力于成爲EOS區塊生産者。", "投票僅需3步就可以完成，我們在第一步中會要求您輸入您的賬戶名和EOS Active私鑰。如果您的賬戶是初始映射賬戶，我們提供了通過您的EOS公鑰查詢EOS賬戶名的功能。關于私鑰的安全性，請不用擔心，所有的交易都將在本台設備上完成，您的私鑰將不會保存或被上傳到網絡上。", "在導入賬戶後，第二步EOS.IO將要求您質押您的EOS以換取投票資格，並且只能質押整數倍的EOS。您可以隨時申請贖回質押的EOS，申請贖回的EOS將在72小時後到賬。贖回中的EOS可以質押，但無法進行交易。", "質押EOS後，第三步需要您投票給自己認可的超級節點。一個EOS通過質押後可以換取一票，一票最多可以同時投30個候選節點，每個候選節點不可重複投票。", "感謝您的投票！"],
       "know": "了解EOS Pacific",
       "jump_btn": "知道了",
-      "jump_icon": "../images/app_mobile/confirm-icon-hk.png"
+      "jump_icon": "/images/app_mobile/confirm-icon-hk.png"
     },
     "code": "EOS Pacific投票系統源碼已公開，點擊查看",
     "disclaimer": "免責聲明",

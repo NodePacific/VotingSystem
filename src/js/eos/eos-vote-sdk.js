@@ -59,10 +59,12 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
             this._clientDefaultParams = null;
             this._serverDefaultParams = null;
             this._unsignClient = null;
+            this._tokenSymbol = null;
             params = params || {};
             this._clientDefaultParams = params['eosjs'] || {};
             this._serverDefaultParams = params['server'] || {};
             this._unsignClient = null;
+            this._tokenSymbol = this._clientDefaultParams['symbol'] || 'EOS';
         }
         EosVoteSdk.prototype.createClient = function (params) {
             var defaultHttpEndpoint = '';
@@ -429,7 +431,7 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
                                             case 0: return [4 /*yield*/, client.getAccount({ account_name: accountName })];
                                             case 1:
                                                 info = (_a.sent()) || {};
-                                                delegatedBandwidth = info['delegated_bandwidth'] || {};
+                                                delegatedBandwidth = info['self_delegated_bandwidth'] || {};
                                                 voterInfo = info['voter_info'] || {};
                                                 stakedOfNet = (delegatedBandwidth['net_weight'] || '0.0000').replace(/\s|EOS/g, '');
                                                 stakedOfCpu = (delegatedBandwidth['cpu_weight'] || '0.0000').replace(/\s|EOS/g, '');
@@ -478,7 +480,7 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
                                             case 0: return [4 /*yield*/, client.getAccount({ account_name: accountName })];
                                             case 1:
                                                 info = (_a.sent()) || {};
-                                                delegatedBandwidth = info['delegated_bandwidth'] || {};
+                                                delegatedBandwidth = info['self_delegated_bandwidth'] || {};
                                                 voterInfo = info['voter_info'] || {};
                                                 stakedOfNet = Number.parseFloat((delegatedBandwidth['net_weight'] || '0.0000').replace(/\s|EOS/g, ''));
                                                 stakedOfCpu = Number.parseFloat((delegatedBandwidth['cpu_weight'] || '0.0000').replace(/\s|EOS/g, ''));
@@ -568,7 +570,7 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
             var _this = this;
             var provider = function () { return __awaiter(_this, void 0, void 0, function () {
                 var _this = this;
-                var accountName, broadcast, secretKey, candidates, mode, client, candidatesNew, votedCandidateAccountProvider, candidatesOld, candidatesNewDuplicated_1, candidatesNew_1, success_count, failure_count;
+                var accountName, broadcast, secretKey, candidates, mode, client, candidatesNew, votedCandidateAccountProvider, candidatesOld, candidatesNewDuplicated_1, candidatesNew_1, duplicatedCount, newVoteCount, successCount, failureCount;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -643,11 +645,13 @@ define("eos-vote-sdk", ["require", "exports", "eosjs", "jquery"], function (requ
                                 }, { broadcast: broadcast })];
                         case 5:
                             _a.sent();
-                            success_count = Math.max(candidatesNew_1.length - candidatesOld.length, 0);
-                            failure_count = Math.max(candidates.length - success_count, 0);
+                            duplicatedCount = Math.max(candidatesNewDuplicated_1.length - candidatesNew_1.length, 0);
+                            newVoteCount = Math.max(candidatesNew_1.length - candidatesOld.length, 0);
+                            successCount = duplicatedCount + newVoteCount;
+                            failureCount = Math.max(candidates.length - successCount, 0);
                             return [2 /*return*/, {
-                                    success_count: success_count,
-                                    failure_count: failure_count,
+                                    success_count: successCount,
+                                    failure_count: failureCount,
                                 }];
                         case 6: return [2 /*return*/];
                     }

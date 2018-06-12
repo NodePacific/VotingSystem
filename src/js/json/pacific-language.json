@@ -1,6 +1,6 @@
 {
 	"english": {
-		"title": ["Home", "EOS Pacific"],
+		"title": ["Home", "EOS Vote"],
 		"copyright": "© 2018 nodepacific tech All rights reserved",
 		"home": {
 			"first_title": "NodePacific Tech",
@@ -60,7 +60,7 @@
 		}    
 	},
 	"zh_chs": {
-		"title": ["主页", "EOS Pacific"],
+		"title": ["主页", "EOS 投票"],
 		"copyright": "© 2018 nodepacific tech 版权所有",
 		"home": {
 			"first_title": "节点亚太科技",
@@ -120,7 +120,7 @@
 		}
 	},
 	"zh_cht": {
-		"title": ["主頁", "EOS Pacific"],
+		"title": ["主頁", "EOS 投票"],
 		"copyright": "© 2018 nodepacific tech 版權所有",
 		"home": {
 			"first_title": "節點亞太科技",
