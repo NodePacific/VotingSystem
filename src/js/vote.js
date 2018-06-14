@@ -3,14 +3,14 @@ window.onload = function () {
   requirejs.config({
     waitSeconds : 30,
     paths: {
-      'jquery': 'https://dn-gmfproductintro.qbox.me/js/blockc-intro/jquery',
-      'eosjs': 'https://dn-gmfproductintro.qbox.me/js/blockc-intro/eos',
+      'jquery': '/js/jquery',
+      'eosjs': '/js/eos/eos',
       'eos-vote-sdk': '/js/eos/eos-vote-sdk',
       'rangeslider': '/js/rangeslider.min',
       'vue': '/js/vue.min',
       'iview': '/js/iview.min',
       'grayscale': '/js/grayscale',
-      'easing': 'js/jquery.easing.min',
+      'easing': '/js/jquery.easing.min',
       'bootstrap-select': '/js/bootstrap-select.min'
     }
   })
@@ -21,12 +21,12 @@ window.onload = function () {
     $('html, body').scrollTop(0).animate({scrollTop: $("#vote-tip").offset().top});
 
     $.ajax({
-      url: 'https://vot.nodepacific.com/v1/chain/get_info',
+      url: 'https://www.nodepacific.com/v1/chain/get_info',
       type: 'GET',
       success: function (chainData) {
         sdk = new EosVoteSdk({
           eosjs: {
-            httpEndpoint: 'https://vot.nodepacific.com',
+            httpEndpoint: 'https://www.nodepacific.com',
             chainId: chainData.chain_id,
           },
           server: {

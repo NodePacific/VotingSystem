@@ -2,8 +2,8 @@
 $(function () {
   requirejs.config({
     paths: {
-      'jquery': 'https://dn-gmfproductintro.qbox.me/js/blockc-intro/jquery',
-      'eosjs': 'https://dn-gmfproductintro.qbox.me/js/blockc-intro/eos',
+      'jquery': '/js/jquery',
+      'eosjs': '/js/eos/eos',
       'eos-vote-sdk': '/js/eos/eos-vote-sdk',
       'selectpicker': '/js/bootstrap-select.min',
       'rangeslider': '/js/rangeslider.min',
@@ -15,12 +15,12 @@ $(function () {
   requirejs(['eos-vote-sdk', 'bootstrap', 'selectpicker', 'rangeslider', 'dropdown'], function(EosVoteSdk, bootstrap, selectpicker, rangeslider, dropdown) {
     // perform anything u want
     $.ajax({
-      url: 'https://vot.nodepacific.com/v1/chain/get_info',
+      url: 'https://www.nodepacific.com/v1/chain/get_info',
       type: 'GET',
       success: function (chainData) {
         var sdk = new EosVoteSdk({
           eosjs: {
-            httpEndpoint: 'https://vot.nodepacific.com',
+            httpEndpoint: 'https://www.nodepacific.com',
             chainId: chainData.chain_id,
           },
           server: {
